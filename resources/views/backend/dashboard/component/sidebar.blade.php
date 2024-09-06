@@ -23,6 +23,7 @@
             <li class="active">
                 <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Quản lí</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
+                    <li><a href="#">Nhóm Thành Viên</a></li>
                     <li><a href="{{ route('user.index') }}">Thành Viên</a></li>
                     <li><a href="index.html">Tour</a></li>
                     <li><a href="index.html">Khách Sạn</a></li>
