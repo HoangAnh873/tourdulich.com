@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd6854d2122384c4a0bb95672637d423",
+    "content-hash": "6744b5a6818792e187a9ad868ccaea9d",
     "packages": [
         {
             "name": "brick/math",
@@ -6054,112 +6054,6 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
-        },
-        {
-            "name": "yoeunes/toastr",
-            "version": "v2.3.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yoeunes/toastr.git",
-                "reference": "5c39d42b4c7b110572b7643bba1cd51b8af89b74"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yoeunes/toastr/zipball/5c39d42b4c7b110572b7643bba1cd51b8af89b74",
-                "reference": "5c39d42b4c7b110572b7643bba1cd51b8af89b74",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3",
-                "php-flasher/flasher-laravel": "^1.15.14"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "aliases": {
-                        "Toastr": "Yoeunes\\Toastr\\Facades\\Toastr"
-                    },
-                    "providers": [
-                        "Yoeunes\\Toastr\\ToastrServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Yoeunes\\Toastr\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Younes KHOUBZA",
-                    "email": "younes.khoubza@gmail.com",
-                    "homepage": "https://www.linkedin.com/in/younes-khoubza",
-                    "role": "Developer"
-                }
-            ],
-            "description": "toastr.js flush notifications for Laravel",
-            "homepage": "https://github.com/yoeunes/toastr",
-            "keywords": [
-                "custom-adapter",
-                "dark-mode",
-                "desktop-notifications",
-                "flash-messages",
-                "framework-agnostic",
-                "javascript",
-                "laravel",
-                "notification-system",
-                "noty",
-                "notyf",
-                "php",
-                "php-flasher",
-                "phpstorm-auto-complete",
-                "pnotify",
-                "rtl",
-                "sweetalert",
-                "symfony",
-                "toastr",
-                "toastr js",
-                "user-experience",
-                "user-feedback",
-                "yoeunes"
-            ],
-            "support": {
-                "docs": "https://github.com/yoeunes/toastr/README.md",
-                "email": "younes.khoubza@gmail.com",
-                "issues": "https://github.com/yoeunes/toastr/issues",
-                "source": "https://github.com/yoeunes/toastr"
-            },
-            "funding": [
-                {
-                    "url": "https://www.paypal.com/paypalme/yoeunes",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/yoeunes",
-                    "type": "github"
-                },
-                {
-                    "url": "https://ko-fi.com/yoeunes",
-                    "type": "ko_fi"
-                },
-                {
-                    "url": "https://opencollective.com/php-flasher",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://www.patreon.com/yoeunes",
-                    "type": "patreon"
-                }
-            ],
-            "abandoned": "php-flasher/flasher-toastr-laravel",
-            "time": "2024-03-16T15:29:23+00:00"
         }
     ],
     "packages-dev": [
@@ -6296,6 +6190,68 @@
                 }
             ],
             "time": "2023-11-03T12:00:00+00:00"
+        },
+        {
+            "name": "getsolaris/laravel-make-service",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/getsolaris/laravel-make-service.git",
+                "reference": "bb59cfd6852543225174557a75d784858dee5247"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/getsolaris/laravel-make-service/zipball/bb59cfd6852543225174557a75d784858dee5247",
+                "reference": "bb59cfd6852543225174557a75d784858dee5247",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "~5.6.34|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+                "illuminate/support": "~5.6.34|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+                "php": "^7.1|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5|^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Getsolaris\\LaravelMakeService\\LaravelMakeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Getsolaris\\LaravelMakeService\\": "src/"
+                },
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "getsolaris",
+                    "email": "getsolaris.kr@gmail.com"
+                }
+            ],
+            "description": "A MVCS pattern create a service command for Laravel 5+",
+            "keywords": [
+                "contract",
+                "laravel",
+                "mvcs",
+                "pattern",
+                "service"
+            ],
+            "support": {
+                "issues": "https://github.com/getsolaris/laravel-make-service/issues",
+                "source": "https://github.com/getsolaris/laravel-make-service/tree/v1.1.2"
+            },
+            "time": "2024-02-28T09:15:24+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
