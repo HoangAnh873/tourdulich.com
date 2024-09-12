@@ -31,7 +31,7 @@
                         </span>
                     </div>
                   </div>
-                  <a href="" class="btn btn-danger"><i class="fa fa-plus mr5">Thêm
+                  <a href="{{ route('user.create') }}" class="btn btn-danger"><i class="fa fa-plus mr5">Thêm
                     mới thành viên</i></a>
             </div>
         </div>
