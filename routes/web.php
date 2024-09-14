@@ -31,10 +31,12 @@ Route::group(['prefix' => 'user'], function(){
     ('user.index')->middleware('admin');
     Route::get('create', [UserController::class, 'create'])->name
     ('user.create')->middleware('admin');
+    Route::post('store', [UserController::class, 'store'])->name
+    ('user.store')->middleware('admin');
 
 });
 
-/* USER */
+/* AJAX */
 Route::get('ajax/location/getLocation', [LocationController::class, 'getLocation'])->name
 ('ajax.location.index')->middleware('admin');
 

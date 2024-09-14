@@ -11,7 +11,7 @@ use App\Models\District;
  */
 class DistrictRepository extends BaseRepository implements DistrictRepositoryInterface
 {
-    protected $models;
+    protected $model;
 
     public function __construct(
         District $model

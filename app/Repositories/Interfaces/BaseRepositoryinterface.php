@@ -8,6 +8,7 @@ namespace App\Repositories\Interfaces;
  */
 interface BaseRepositoryInterface
 {
+   public function create(array $payload);
    public function all();
    public function findById(int $id);
 }

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Services\Interfaces\UserServiceInterface as UserService;
 use App\Repositories\Interfaces\ProvinceRepositoryInterface as ProvinceService;
 
+use App\Http\Requests\StoreUserRequest;
+
 class UserController extends Controller
 {
     protected $userService;
@@ -46,7 +48,6 @@ class UserController extends Controller
 
     public function create(){
 
-
         $provinces = $this->provinceRepository->all();
         
         $config = [
@@ -55,7 +56,7 @@ class UserController extends Controller
             ],
             'js' => [
                 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
-                'backend/library/location.js'
+                'backend/library/location.js',
             ]
         ];
         $config['seo'] = config('apps.user');
@@ -65,5 +66,13 @@ class UserController extends Controller
             'config',
             'provinces',
         ));
+    }
+    public function store(StoreUserRequest $request){
+        if($this->userService->create($request)){
+            return redirect()->route('user.index')->with('success','Thêm mới bản ghi 
+            thành công');
+        }
+        return redirect()->route('user.index')->with('error','Thêm mới bản ghi 
+        không thành công');
     }
 }

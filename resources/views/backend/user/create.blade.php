@@ -1,6 +1,15 @@
 @include('backend.dashboard.component.breadcrumb', ['title' => $config['seo']['create']['title']])
-
-<form action="" method="" class="box">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<form action="{{ route('user.store') }}" method="post" class="box">
+    @csrf
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <div class="col-lg-5">
@@ -25,7 +34,7 @@
                                     <input 
                                         type="text"
                                         name="email"
-                                        value=""
+                                        value="{{ old('email') }}"
                                         class="form-control"
                                         placeholder=""
                                         autocomplete="off"
@@ -40,7 +49,7 @@
                                     <input 
                                         type="text"
                                         name="name"
-                                        value=""
+                                        value="{{ old('name') }}"
                                         class="form-control"
                                         placeholder=""
                                         autocomplete="off"
@@ -48,15 +57,23 @@
                                 </div>
                             </div>
                         </div>
+                        @php
+                            $userCatalogue = [
+                                '[Chọn nhóm thành viên]',
+                                'Quản trị viên',
+                                'Cộng tác viên'
+                            ];
+                        @endphp
                         <div class="row mb15">
                             <div class="col-lg-6">
                                 <div class="form-row">
                                     <label for="" class="control-label text-left">Nhóm thành viên
                                     <span class="text-danger">*</span></label>
                                     <select name="user_catalogue_id" class="form-control setupSelect2">
-                                        <option value="0">[Chọn Nhóm Thành Viên]</option>
-                                        <option value="1">Quản trị viên</option>
-                                        <option value="2">Cộng tác viên</option>
+                                        @foreach($userCatalogue as $key => $item)
+                                        <option @if(old('user_catalogue_id') == $key)
+                                        selected @endif value="{{ $key }}">{{ $item }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -67,7 +84,7 @@
                                     <input 
                                         type="text"
                                         name="phone"
-                                        value=""
+                                        value="{{ old('phone') }}"
                                         class="form-control"
                                         placeholder=""
                                         autocomplete="off"
