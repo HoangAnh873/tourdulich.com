@@ -8,7 +8,10 @@
         </ul>
     </div>
 @endif
-<form action="{{ route('user.store') }}" method="post" class="box">
+@php
+    $url = ($config['method'] == 'create') ? route('user.store') : route('user.update', $user->id);
+@endphp
+<form action="{{ $url }}" method="post" class="box">
     @csrf
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
@@ -34,7 +37,7 @@
                                     <input 
                                         type="text"
                                         name="email"
-                                        value="{{ old('email') }}"
+                                        value="{{ old('email', ($user->email) ?? '') }}"
                                         class="form-control"
                                         placeholder=""
                                         autocomplete="off"
@@ -49,7 +52,7 @@
                                     <input 
                                         type="text"
                                         name="name"
-                                        value="{{ old('name') }}"
+                                        value="{{ old('name', ($user->name) ?? '') }}"
                                         class="form-control"
                                         placeholder=""
                                         autocomplete="off"
@@ -71,8 +74,10 @@
                                     <span class="text-danger">*</span></label>
                                     <select name="user_catalogue_id" class="form-control setupSelect2">
                                         @foreach($userCatalogue as $key => $item)
-                                        <option @if(old('user_catalogue_id') == $key)
-                                        selected @endif value="{{ $key }}">{{ $item }}</option>
+                                        <option {{ $key == old('user_catalogue_id', (isset
+                                        ($user->user_catalogue_id)) ? 
+                                        $user->user_catalogue_id : '') ? 'selected' : '' }} 
+                                        value="{{ $key }}">{{ $item }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -84,7 +89,7 @@
                                     <input 
                                         type="text"
                                         name="phone"
-                                        value="{{ old('phone') }}"
+                                        value="{{ old('phone', ($user->phone) ?? '') }}"
                                         class="form-control"
                                         placeholder=""
                                         autocomplete="off"
@@ -92,6 +97,7 @@
                                 </div>
                             </div>
                         </div>
+                        @if($config['method'] == 'create')
                         <div class="row mb15">
                             <div class="col-lg-6">
                                 <div class="form-row">
@@ -124,6 +130,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
