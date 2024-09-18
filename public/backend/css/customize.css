@@ -126,3 +126,14 @@ table strong{
 .form-control{
     height: 31px;
 }
+.ml10{
+    margin-left: 10px;
+}
+.active-bg{
+    background: #ffc !important;
+}
+#checkAll,
+.checkBoxItem{
+    width: 15px;
+    height: 15px;
+}

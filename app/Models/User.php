@@ -24,6 +24,7 @@ class User extends Authenticatable
         'password',
         'phone',
         'user_catalogue_id',
+        'publish',
     ];
 
     /**
