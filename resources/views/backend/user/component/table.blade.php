@@ -30,7 +30,7 @@
                 <td class="text-center js-switch-{{ $user->id }}">  
                     <input type="checkbox" value="{{ $user->publish }}" class="js-switch
                     status" data-field="publish" data-model="User" {{  ($user->publish == 
-                    1) ? 'checked' : ''}} data-modelId="{{ $user->id }}"  />
+                    2) ? 'checked' : ''}} data-modelId="{{ $user->id }}"  />
                     
                 </td>
                 <td class="text-center">  

@@ -127,10 +127,10 @@ class UserController extends Controller
 
     public function destroy($id){
         if($this->userService->destroy($id)){
-            return redirect()->route('user.index')->with('success','Xóa bản ghi 
+            return redirect()->route('user.index')->with('success','Xóa nhân viên 
             thành công');
         }
-        return redirect()->route('user.index')->with('error','Xóa bản ghi 
+        return redirect()->route('user.index')->with('error','Xóa nhân viên 
         không thành công');
     }
 
