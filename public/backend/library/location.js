@@ -52,7 +52,7 @@
     
     $(document).ready(function(){
         HT.getLocation();
-        HT.loadCity();
+        // HT.loadCity();
     });
     
 })(jQuery);

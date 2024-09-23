@@ -18,7 +18,7 @@
                     @php
                         $publish = request('publish') ?: old('publish');
                     @endphp
-                    <select name="publish" class="form-control ml10 setupSelect2">
+                    <select name="publish" class="form-control mr10">
                         <option value="0" selected="selected">Chọn Trạng Thái</option>
                         <option {{ ($publish == 2)  ? 'selected' : '' }} value="2">Đang hoạt động</option>
                         <option {{ ($publish == 1)  ? 'selected' : '' }} value="1">Không hoạt động</option>
