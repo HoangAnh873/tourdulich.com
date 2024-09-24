@@ -23,19 +23,18 @@
                     IN+
                 </div>
             </li>
-            <li class="{{ ($segment == 'user') ? 'active' : '' }}">
-                <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Quản lí Thành Viên</span> <span class="fa arrow"></span></a>
+            @foreach(config('apps.module.module') as $key => $val)
+            <li class="{{ (in_array($segment, $val['name'])) ? 'active' : '' }}">
+                <a href=""><i class="{{ $val['icon'] }}"></i> <span class="nav-label">{{ $val['title'] }}</span> <span class="fa arrow"></span></a>
+                @if(isset($val['subModule']))
                 <ul class="nav nav-second-level">
-                    <li><a href="{{ route('user.index') }}">Thành Viên</a></li>
+                    @foreach($val['subModule'] as $module)
+                    <li><a href="{{ $module['route'] }}">{{ $module['title'] }}</a></li>
+                    @endforeach
                 </ul>
+                @endif
             </li>
-            <li class="{{ ($segment == 'language') ? 'active' : '' }}">
-                <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Quản lí Cấu Hình</span> <span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li><a href="{{ route('language.index') }}">Ngôn ngữ</a></li>
-                </ul>
-            </li>
-            
+            @endforeach
         </ul>
 
     </div>

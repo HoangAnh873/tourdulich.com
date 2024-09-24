@@ -19,9 +19,9 @@
                         $publish = request('publish') ?: old('publish');
                     @endphp
                     <select name="publish" class="form-control mr10">
-                        <option value="0" selected="selected">Chọn Trạng Thái</option>
-                        <option {{ ($publish == 2)  ? 'selected' : '' }} value="2">Đang hoạt động</option>
-                        <option {{ ($publish == 1)  ? 'selected' : '' }} value="1">Không hoạt động</option>
+                        @foreach(config('apps.general.publish') as $key => $val)
+                        <option {{ ($publish == $key)  ? 'selected' : '' }} value="{{ $key }}">{{ $val }}</option>
+                        @endforeach
                     </select>
                     
                     {{-- Khi nào có thời gian thì làm thêm phần Nhóm Thành Viên hic hic ko biết kịp ko :( series 7 p25 --}}

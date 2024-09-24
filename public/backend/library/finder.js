@@ -17,7 +17,7 @@
         var finder = new CKFinder();
         finder.resourceType = type;
         finder.selectActionFunction = function( fileUrl, data ) {
-            object.val('/'+fileUrl)
+            object.val(fileUrl)
         }
         finder.popup();
     }
@@ -26,7 +26,8 @@
 	$(document).ready(function(){
         
         HT.uploadImageToInput();
-        // HT.setupCkeditor2();
+        HT.setupCkFinder2();
+        // HT.setupCkeditor();
         
 	});
 

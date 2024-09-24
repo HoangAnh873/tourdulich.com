@@ -7,10 +7,10 @@
     </a>
     <ul class="dropdown-menu dropdown-user">
         <li><a href="#" class="changeStatusAll" data-field="publish" data-model="{{ $model }}" 
-            data-value="2">Publish All</a>
+            data-value="2">Bật tất cả</a>
         </li>
         <li><a href="#" class="changeStatusAll"  data-field="publish" data-model="{{ $model }}" 
-            data-value="1">UnPublish All</a>
+            data-value="1">Tắt tất cả</a>
         </li>
     </ul>
     <a class="close-link">
