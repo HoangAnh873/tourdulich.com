@@ -54,15 +54,7 @@ class UserController extends Controller
 
     public function create(){
         $provinces = $this->provinceRepository->all();
-        $config = [
-            'css' => [
-                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css'
-            ],
-            'js' => [
-                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
-                'backend/library/location.js',
-            ]
-        ];
+        $config = $this->config();
         $config['seo'] = config('apps.user');
         $config['method'] = 'create';
         $template = 'backend.user.store';
@@ -84,15 +76,7 @@ class UserController extends Controller
     public function edit($id){
         $user = $this->userRepository->findById($id);
         $provinces = $this->provinceRepository->all();
-        $config = [
-            'css' => [
-                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css'
-            ],
-            'js' => [
-                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
-                'backend/library/location.js',
-            ]
-        ];
+        $config = $this->config();
         $config['seo'] = config('apps.user');
         $config['method'] = 'edit';
         $template = 'backend.user.store';
@@ -132,6 +116,19 @@ class UserController extends Controller
         }
         return redirect()->route('user.index')->with('error','Xóa nhân viên 
         không thành công');
+    }
+
+    private function config(){
+        return [
+            'css' => [
+                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css'
+            ],
+            'js' => [
+                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
+                'backend/library/location.js',
+            ]
+        ];
+
     }
 
 }

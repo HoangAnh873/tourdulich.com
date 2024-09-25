@@ -2,7 +2,7 @@
     <div class="filter-wrapper">
         <div class="uk-flex uk-flex-middle uk-flex-space-between">
             <div class="perpage">
-                @php
+                {{-- @php
                     $perpage = request('perpage') ?: old('perpage');
                 @endphp
                 <div class="uk-flex uk-flex-middle uk-flex-space-between">
@@ -11,7 +11,7 @@
                         <option {{ ($perpage == $i)  ? 'selected' : '' }}  value="{{ $i }}">{{ $i }} bản ghi</option>
                         @endfor
                     </select>
-                </div>
+                </div> --}}
             </div>
             <div class="action">
                 <div class="uk-flex uk-flex-middle">

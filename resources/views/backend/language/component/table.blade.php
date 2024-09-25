@@ -7,7 +7,6 @@
         <th style="width:100px;">Ảnh</th>
         <th>Tên Ngôn ngữ</th>
         <th>Canonical</th>
-        <th>Mô tả</th>
         <th class="text-center">Tình Trạng</th>
         <th class="text-center">Thao tác</th>
     </tr>
@@ -27,9 +26,6 @@
                 </td>
                 <td>
                     {{ $language->canonical }}
-                </td>
-                <td>
-                    {{ $language->description }}
                 </td>
                 <td class="text-center js-switch-{{ $language->id }}"> 
                     <input type="checkbox" value="{{ $language->publish }}" class="js-switch status " data-field="publish" data-model="Language" {{ ($language->publish == 2) ? 'checked' : '' }} data-modelId="{{ $language->id }}" />
