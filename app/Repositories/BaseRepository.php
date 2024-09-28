@@ -30,10 +30,22 @@ class BaseRepository implements BaseRepositoryInterface
             if(isset($condition['keyword']) && !empty($condition['keyword'])){
                 $query->where('name', 'LIKE', '%'.$condition['keyword'].'%');
             }
+
+            // if(isset($condition['publish']) && $condition['publish'] != 0){
+            //     $query->where('pushlish', '=', $condition['publish']);
+            // }
+            // return $query;
         });
+
         if(!empty($join)){
             $query->join(...$join);
         }
+
+        // if(isset($join) && is_array(join) && count($join) ){
+        //     foreach($join as $key => $val){
+        //         $query->join($val[0], $val[1], $val[2]);
+        //     }
+        // }
 
         return $query->paginate($perPage)
                     ->withQueryString()
