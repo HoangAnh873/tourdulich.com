@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Ajax\DashboardController as AjaxDashboardController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Backend\TourController;
 use App\Http\Controllers\Backend\LanguageController;
 use App\Http\Controllers\Ajax\LocationController;
 use App\Http\Middleware\AuthenticateMiddleware;
@@ -43,6 +44,25 @@ Route::group(['prefix' => 'user'], function(){
     ->name('user.delete')->middleware('admin');
     Route::delete('{id}/destroy', [UserController::class, 'destroy'])->where(['id' => '[0-9]+'])
     ->name('user.destroy')->middleware('admin');
+    
+});
+
+/* USER */
+Route::group(['prefix' => 'tour'], function(){
+    Route::get('index', [TourController::class, 'index'])->name
+    ('tour.index')->middleware('admin');
+    Route::get('create', [TourController::class, 'create'])->name
+    ('tour.create')->middleware('admin');
+    Route::post('store', [TourController::class, 'store'])->name
+    ('tour.store')->middleware('admin');
+    Route::get('{id}/edit', [TourController::class, 'edit'])->where(['id' => '[0-9]+'])
+    ->name('tour.edit')->middleware('admin');
+    Route::post('{id}/update', [TourController::class, 'update'])->where(['id' => '[0-9]+'])
+    ->name('tour.update')->middleware('admin');
+    Route::get('{id}/delete', [TourController::class, 'delete'])->where(['id' => '[0-9]+'])
+    ->name('tour.delete')->middleware('admin');
+    Route::delete('{id}/destroy', [TourController::class, 'destroy'])->where(['id' => '[0-9]+'])
+    ->name('tour.destroy')->middleware('admin');
     
 });
 

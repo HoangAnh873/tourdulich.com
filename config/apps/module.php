@@ -15,6 +15,17 @@
                 ]
             ],
             [
+                'title' => 'Quản Lí Tour',
+                'icon' => 'fa fa-file',
+                'name' => ['tour'],
+                'subModule' => [
+                    [
+                        'title' => 'Tour',
+                        'route' => 'tour/index'
+                    ],
+                ]
+            ],
+            [
                 'title' => 'Cấu Hình Chung',
                 'icon' => 'fa fa-file',
                 'name' => ['language'],
@@ -25,5 +36,6 @@
                     ],
                 ]
             ]
+            
         ],
     ];

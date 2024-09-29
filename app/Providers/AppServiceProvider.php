@@ -15,8 +15,14 @@ class AppServiceProvider extends ServiceProvider
         'App\Services\Interfaces\LanguageServiceInterface' => 'App\Services\LanguageService',
         'App\Repositories\Interfaces\LanguageRepositoryInterface' => 'App\Repositories\LanguageRepository',
 
+
+        'App\Services\Interfaces\TourServiceInterface' => 'App\Services\TourService',
+        'App\Repositories\Interfaces\TourRepositoryInterface' => 'App\Repositories\TourRepository',
+
+
         'App\Repositories\Interfaces\ProvinceRepositoryInterface' => 'App\Repositories\ProvinceRepository',
         'App\Repositories\Interfaces\DistrictRepositoryInterface' => 'App\Repositories\DistrictRepository',
+
     ];
     
     /**
