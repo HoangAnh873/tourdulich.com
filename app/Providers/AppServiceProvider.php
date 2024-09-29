@@ -19,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
         'App\Services\Interfaces\TourServiceInterface' => 'App\Services\TourService',
         'App\Repositories\Interfaces\TourRepositoryInterface' => 'App\Repositories\TourRepository',
 
+        'App\Services\Interfaces\BillServiceInterface' => 'App\Services\BillService',
+        'App\Repositories\Interfaces\BillRepositoryInterface' => 'App\Repositories\BillRepository',
 
         'App\Repositories\Interfaces\ProvinceRepositoryInterface' => 'App\Repositories\ProvinceRepository',
         'App\Repositories\Interfaces\DistrictRepositoryInterface' => 'App\Repositories\DistrictRepository',

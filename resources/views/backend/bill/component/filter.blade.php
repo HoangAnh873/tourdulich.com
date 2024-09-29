@@ -1,4 +1,4 @@
-<form action="{{ route('tour.index') }}">
+<form action="{{ route('bill.index') }}">
     <div class="filter-wrapper">
         <div class="uk-flex uk-flex-middle uk-flex-space-between">
             <div class="perpage">
@@ -24,19 +24,6 @@
                         @endforeach
                     </select>
                     
-                    {{-- Khi nào có thời gian thì làm thêm phần Nhóm Thành Viên hic hic ko biết kịp ko :( series 7 p25 --}}
-
-                    {{-- 
-                    @php
-                        $user_catalogue_id = request('user_catalogue_id') ?: old('user_catalogue_id');
-                    @endphp
-                    <select name="user_catalogue_id" class="form-control mr10 setupSelect2">
-                        <option value="0" selected="selected">Chọn Nhóm Thành Viên</option>
-                        <option {{ ($user_catalogue_id == 1)  ? 'selected' : '' }} value="1">Quản trị viên</option>
-                        <option {{ ($user_catalogue_id == 2)  ? 'selected' : '' }} value="2">Cộng trị viên</option>
-                    </select> 
-                    --}}
-                    
                     <div class="uk-search uk-flex uk-flex-middle mr10">
                         <div class="input-group">
                             <input 
@@ -53,8 +40,6 @@
                             </span>
                         </div>
                     </div>
-                    <a href="{{ route('tour.create') }}" class="btn btn-danger"><i class="fa fa-plus mr5">Thêm
-                        mới tour</i></a>
                 </div>
             </div>
         </div>

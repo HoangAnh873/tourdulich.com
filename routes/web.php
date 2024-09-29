@@ -6,6 +6,8 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Ajax\DashboardController as AjaxDashboardController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\TourController;
+use App\Http\Controllers\Backend\BillController;
+// use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\LanguageController;
 use App\Http\Controllers\Ajax\LocationController;
 use App\Http\Middleware\AuthenticateMiddleware;
@@ -47,7 +49,7 @@ Route::group(['prefix' => 'user'], function(){
     
 });
 
-/* USER */
+/* TOUR */
 Route::group(['prefix' => 'tour'], function(){
     Route::get('index', [TourController::class, 'index'])->name
     ('tour.index')->middleware('admin');
@@ -63,8 +65,27 @@ Route::group(['prefix' => 'tour'], function(){
     ->name('tour.delete')->middleware('admin');
     Route::delete('{id}/destroy', [TourController::class, 'destroy'])->where(['id' => '[0-9]+'])
     ->name('tour.destroy')->middleware('admin');
-    
 });
+
+/* BILL */
+Route::group(['prefix' => 'bill'], function(){
+    Route::get('index', [BillController::class, 'index'])->name
+    ('bill.index')->middleware('admin');
+});
+
+/* ORDER */
+// Route::group(['prefix' => 'order'], function(){
+//     Route::get('index', [OrderController::class, 'index'])->name
+//     ('order.index')->middleware('admin');
+//     Route::get('{id}/accept', [OrderController::class, 'accept'])->where(['id' => '[0-9]+'])
+//     ->name('order.accept')->middleware('admin');
+//     Route::get('{id}/delete', [OrderController::class, 'delete'])->where(['id' => '[0-9]+'])
+//     ->name('order.delete')->middleware('admin');
+//     Route::delete('{id}/destroy', [OrderController::class, 'destroy'])->where(['id' => '[0-9]+'])
+//     ->name('order.destroy')->middleware('admin');
+// });
+
+
 
 /* LANGUAGE */
 Route::group(['prefix' => 'language'], function(){

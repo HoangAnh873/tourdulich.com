@@ -5,10 +5,10 @@
                 <input type="checkbox" value="" id="checkAll" class="input-checkbox">
             </th>
             <th>Tên tour</th>
-            <th>mô tả</th>
-            <th>ngày bắt đầu</th>
-            <th>ngày kết thúc</th>
-            <th>giá tour</th>
+            <th>Mô tả</th>
+            <th>Ngày bắt đầu</th>
+            <th>Ngày kết thúc</th>
+            <th>Giá tour</th>
             <th class="text-center">Trạng Thái</th>
             <th class="text-center">Thao Tác</th>
         </tr>

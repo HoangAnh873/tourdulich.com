@@ -12,9 +12,9 @@
                         <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Hoang Anh</strong>
                          </span> <span class="text-muted text-xs block">Admin<b class="caret"></b></span> </span> </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="contacts.html">Contacts</a></li>
-                        <li><a href="mailbox.html">Mailbox</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Contacts</a></li>
+                        <li><a href="#">Mailbox</a></li>
                         <li class="divider"></li>
                         <li><a href="{{ route('auth.logout') }}">Logout</a></li>
                     </ul>
@@ -25,11 +25,11 @@
             </li>
             @foreach(config('apps.module.module') as $key => $val)
             <li class="{{ (in_array($segment, $val['name'])) ? 'active' : '' }}">
-                <a href=""><i class="{{ $val['icon'] }}"></i> <span class="nav-label">{{ $val['title'] }}</span> <span class="fa arrow"></span></a>
+                <a href="#"><i class="{{ $val['icon'] }}"></i> <span class="nav-label">{{ $val['title'] }}</span> <span class="fa arrow"></span></a>
                 @if(isset($val['subModule']))
                 <ul class="nav nav-second-level">
                     @foreach($val['subModule'] as $module)
-                    <li><a href="{{ $module['route'] }}">{{ $module['title'] }}</a></li>
+                    <li><a href="{{ $module['route'] }}">{{ $module['title'] }} </a></li>
                     @endforeach
                 </ul>
                 @endif

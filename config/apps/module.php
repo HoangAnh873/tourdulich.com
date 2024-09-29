@@ -26,6 +26,17 @@
                 ]
             ],
             [
+                'title' => 'Quản Lí Hóa Đơn',
+                'icon' => 'fa fa-file',
+                'name' => ['bill'],
+                'subModule' => [
+                    [
+                        'title' => 'Bill',
+                        'route' => 'bill/index'
+                    ],
+                ]
+            ],
+            [
                 'title' => 'Cấu Hình Chung',
                 'icon' => 'fa fa-file',
                 'name' => ['language'],
