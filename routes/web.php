@@ -7,7 +7,7 @@ use App\Http\Controllers\Ajax\DashboardController as AjaxDashboardController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\TourController;
 use App\Http\Controllers\Backend\BillController;
-// use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\LanguageController;
 use App\Http\Controllers\Ajax\LocationController;
 use App\Http\Middleware\AuthenticateMiddleware;
@@ -74,16 +74,16 @@ Route::group(['prefix' => 'bill'], function(){
 });
 
 /* ORDER */
-// Route::group(['prefix' => 'order'], function(){
-//     Route::get('index', [OrderController::class, 'index'])->name
-//     ('order.index')->middleware('admin');
-//     Route::get('{id}/accept', [OrderController::class, 'accept'])->where(['id' => '[0-9]+'])
-//     ->name('order.accept')->middleware('admin');
-//     Route::get('{id}/delete', [OrderController::class, 'delete'])->where(['id' => '[0-9]+'])
-//     ->name('order.delete')->middleware('admin');
-//     Route::delete('{id}/destroy', [OrderController::class, 'destroy'])->where(['id' => '[0-9]+'])
-//     ->name('order.destroy')->middleware('admin');
-// });
+Route::group(['prefix' => 'order'], function(){
+    Route::get('index', [OrderController::class, 'index'])->name
+    ('order.index')->middleware('admin');
+    Route::get('{id}/accept', [OrderController::class, 'accept'])->where(['id' => '[0-9]+'])
+    ->name('order.accept')->middleware('admin');
+    Route::get('{id}/delete', [OrderController::class, 'delete'])->where(['id' => '[0-9]+'])
+    ->name('order.delete')->middleware('admin');
+    Route::delete('{id}/destroy', [OrderController::class, 'destroy'])->where(['id' => '[0-9]+'])
+    ->name('order.destroy')->middleware('admin');
+});
 
 
 

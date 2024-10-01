@@ -26,12 +26,23 @@
                 ]
             ],
             [
+                'title' => 'Quản Lí Phiếu Đặt',
+                'icon' => 'fa fa-file',
+                'name' => ['order'],
+                'subModule' => [
+                    [
+                        'title' => 'Phiếu Đặt',
+                        'route' => 'order/index'
+                    ],
+                ]
+            ],
+            [
                 'title' => 'Quản Lí Hóa Đơn',
                 'icon' => 'fa fa-file',
                 'name' => ['bill'],
                 'subModule' => [
                     [
-                        'title' => 'Bill',
+                        'title' => 'Hóa Đơn',
                         'route' => 'bill/index'
                     ],
                 ]

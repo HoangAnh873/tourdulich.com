@@ -2,35 +2,35 @@
 
 namespace App\Services;
 
-use App\Services\Interfaces\BillServiceInterface;
-use App\Repositories\Interfaces\BillRepositoryInterface as BillRepository;
+use App\Services\Interfaces\OrderServiceInterface;
+use App\Repositories\Interfaces\OrderRepositoryInterface as OrderRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 
 /**
- * Class BillService
+ * Class OrderService
  * @package App\Services
  */
 
-class BillService implements BillServiceInterface
+class OrderService implements OrderServiceInterface
 {
-    protected $billRepository;
+    protected $orderRepository;
 
 
     public function __construct(
-        BillRepository $billRepository
+        OrderRepository $orderRepository
     ){
-        $this->billRepository = $billRepository;
+        $this->orderRepository = $orderRepository;
     }
 
     public function paginate($request){
         $condition['keyword'] = addslashes($request->input('keyword'));
         $perPage = $request->integer('perpage');
-        $bills = $this->billRepository->pagination(
+        $orders = $this->orderRepository->pagination(
             $this->paginateSelect(), $condition,
-            [], ['path' => 'bill/index'], $perPage );
-        return $bills;
+            [], ['path' => 'order/index'], $perPage );
+        return $orders;
     }
 
     private function paginateSelect(){
@@ -39,7 +39,9 @@ class BillService implements BillServiceInterface
             'customer_name',
             'email',
             'tour_name',
-            'price',
+            'order_date',
+            'start_date',
+            'end_date',
         ];
     }
 

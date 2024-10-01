@@ -1,4 +1,4 @@
-<form action="{{ route('bill.index') }}">
+<form action="{{ route('order.index') }}">
     <div class="filter-wrapper">
         <div class="uk-flex uk-flex-middle uk-flex-space-between">
             <div class="perpage">

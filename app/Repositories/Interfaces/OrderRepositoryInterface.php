@@ -3,10 +3,10 @@
 namespace App\Repositories\Interfaces;
 
 /**
- * Interface BillServiceInterface
+ * Interface OrderServiceInterface
  * @package App\Services\Interfaces
  */
-interface BillRepositoryInterface
+interface OrderRepositoryInterface
 {
 
 }

@@ -2,7 +2,7 @@
 
 return [
     'index' => [
-        'title' => 'Quản lý Hóa Đơn',
-        'table' => 'Danh sách Hóa Đơn',
+        'title' => 'Quản lý hóa đơn',
+        'table' => 'Danh sách hóa đơn',
     ]
 ];

@@ -2,20 +2,20 @@
 
 namespace App\Repositories;
 
-use App\Models\Bill;
-use App\Repositories\Interfaces\BillRepositoryInterface;
+use App\Models\Order;
+use App\Repositories\Interfaces\OrderRepositoryInterface;
 use App\Repositories\BaseRepository;
 
 /**
- * Class BillService
+ * Class OrderService
  * @package App\Services
  */
-class BillRepository extends BaseRepository implements BillRepositoryInterface
+class OrderRepository extends BaseRepository implements OrderRepositoryInterface
 {
     protected $model;
 
     public function __construct(
-        Bill $model
+        Order $model
     ){
         $this->model = $model;
     }
@@ -33,9 +33,7 @@ class BillRepository extends BaseRepository implements BillRepositoryInterface
                       ->orWhere('email', 'LIKE', '%'.$condition['keyword'].'%') 
                       ->orWhere('tour_name', 'LIKE', '%'.$condition['keyword'].'%');
             }
-            // if(isset($condition['publish']) && $condition['publish'] != 0){
-            //     $query->where('publish', '=', $condition['publish']);
-            // }
+            
             return $query;
         });
         if(!empty($join)){

@@ -5,18 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bill extends Model
+class Order extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+
     ];
 
     
-    protected $tables = 'bills';
+    protected $tables = 'oders';
     protected $primaryKey = 'id';
 
-    public function orders(){
-        return $this->hasMany(Order::class, 'bill_id','id');
+    public function bills(){
+        return $this->belongsTo(Bill::class, 'bill_id', 'id');
     }
+
 }
