@@ -36,4 +36,25 @@ class OrderController extends Controller
         ));
     }
 
+    public function delete($id){
+
+        $config['seo'] = config('apps.order');
+        $order = $this->orderRepository->findById($id);
+        $template = 'backend.order.delete';
+        return view('backend.dashboard.layout', compact(
+            'template',
+            'order',
+            'config',
+        ));
+    }
+
+    public function destroy($id){
+        if($this->orderService->destroy($id)){
+            return redirect()->route('order.index')->with('success','Hủy đơn 
+            đặt tour thành công');
+        }
+        return redirect()->route('order.index')->with('error','Hủy đơn 
+        đặt tour không thành công');
+    }
+
 }

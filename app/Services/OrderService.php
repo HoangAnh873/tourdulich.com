@@ -33,6 +33,20 @@ class OrderService implements OrderServiceInterface
         return $orders;
     }
 
+    public function destroy($id){
+        DB::beginTransaction();
+        try{
+            $tour = $this->orderRepository->delete($id);
+            DB::commit();
+            return true;
+        }catch(\Exception $e){
+            DB::rollBack();
+            // Log::error($e->getMessage());
+            echo $e->getMessage(); die();
+            return false;
+        }
+    }
+
     private function paginateSelect(){
         return [
             'id',

@@ -1,6 +1,6 @@
 @include('backend.dashboard.component.breadcrumb', ['title' => $config['seo']['delete']['title']])
 
-<form action=" {{ route('tour.destroy', $tour->id) }} " method="post" class="box">
+<form action=" {{ route('order.destroy', $order->id) }} " method="post" class="box">
     @csrf
     @method('DELETE')
     <div class="wrapper wrapper-content animated fadeInRight">
@@ -20,12 +20,12 @@
                         <div class="row mb15">
                             <div class="col-lg-6">
                                 <div class="form-row">
-                                    <label for="" class="control-label text-left">Tên tour
+                                    <label for="" class="control-label text-left">Tên khách đặt
                                     </label>
                                     <input 
                                         type="text"
-                                        name="name"
-                                        value="{{ old('name', ($tour->name) ?? '') }}"
+                                        name="customer_name"
+                                        value="{{ old('customer_name', ($order->customer_name) ?? '') }}"
                                         class="form-control"
                                         placeholder=""
                                         autocomplete="off"
@@ -35,12 +35,12 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-row">
-                                    <label for="" class="control-label text-left">Giá tour
+                                    <label for="" class="control-label text-left">Ngày đặt
                                     </label>
                                     <input 
-                                        type="numeric"
-                                        name="price"
-                                        value="{{ old('price', ($tour->price) ?? '') }}"
+                                        type="date"
+                                        name="order_date"
+                                        value="{{ old('order_date', ($order->order_date) ?? '') }}"
                                         class="form-control"
                                         placeholder=""
                                         autocomplete="off"

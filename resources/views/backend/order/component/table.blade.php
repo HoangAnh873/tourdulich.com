@@ -7,6 +7,7 @@
             <th>Ngày đặt</th>
             <th>Ngày bắt đầu</th>
             <th>Ngày kết Thúc</th>
+            <th class="text-center">Đợi Duyệt</th>
         </tr>
     </thead>
     <tbody>
@@ -30,6 +31,10 @@
                 </td>
                 <td>
                     {{ $order->end_date }}
+                </td>
+                <td class="text-center">  
+                    <a href="{{ route('order.accept', $order->id) }}" class="btn btn-warning">Duyệt</a>
+                    <a href="{{ route('order.delete', $order->id) }}" class="btn btn-danger">hủy</i></a>
                 </td>
         
             </tr>

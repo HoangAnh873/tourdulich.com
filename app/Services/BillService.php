@@ -40,6 +40,7 @@ class BillService implements BillServiceInterface
             'email',
             'tour_name',
             'price',
+            'invoice_date',
         ];
     }
 

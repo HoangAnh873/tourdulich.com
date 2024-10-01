@@ -5,6 +5,7 @@
             <th>Email</th>
             <th>Tên tour</th>
             <th>Giá tour</th>
+            <th>Ngày lập</th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,9 @@
                 </td>
                 <td>
                     {{ $bill->price }}
+                </td>
+                <td>
+                    {{ $bill->invoice_date }}
                 </td>
         
             </tr>
