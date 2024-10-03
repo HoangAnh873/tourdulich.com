@@ -36,7 +36,7 @@
 #login .login-banner .uilogin .login-mid input {
   min-width: 40rem;
   min-height: 6rem;
-  margin: 30px auto 15px;
+  margin: 10px auto 20px;
   background-color: rgba(207, 253, 213, 0.151);
   border: 0.5px solid rgba(166, 248, 177, 0.849);
   display: block;

@@ -103,7 +103,7 @@
                     @endforeach
                 </ul>
             </div>
-        @endif
+        @endif 
       <form action="{{ route('customer.login') }} " method="post">
         @csrf
         <div id="login">
