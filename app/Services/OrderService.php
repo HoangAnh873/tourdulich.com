@@ -54,8 +54,7 @@ class OrderService implements OrderServiceInterface
             'email',
             'tour_name',
             'order_date',
-            'start_date',
-            'end_date',
+            'tour_id',
         ];
     }
 

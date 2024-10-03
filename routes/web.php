@@ -11,6 +11,9 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\LanguageController;
 use App\Http\Controllers\Ajax\LocationController;
 use App\Http\Middleware\AuthenticateMiddleware;
+
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\CustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,13 +25,21 @@ use App\Http\Middleware\AuthenticateMiddleware;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* FRONTEND ROUTES*/
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
+
+Route::get('/login/index', [CustomerController::class, 'indexLogin'])->name('login.index');
+Route::get('/register/index', [CustomerController::class, 'indexRegister'])->name('register.index');
+Route::post('/customer/login', [CustomerController::class, 'login'])->name('customer.login');
+Route::post('/customer/register', [CustomerController::class, 'register'])->name('customer.register');
+
+// Route::post('store', [CustomerController::class, 'store'])->name
+//     ('register.store');
 
 /* BACKEND ROUTES*/
 Route::get('dashboard/index', [DashboardController::class, 'index'])->name
 ('dashboard.index')->middleware('admin');
+
 
 /* USER */
 Route::group(['prefix' => 'user'], function(){

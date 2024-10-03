@@ -17,8 +17,12 @@ class Order extends Model
     protected $tables = 'oders';
     protected $primaryKey = 'id';
 
-    public function bills(){
-        return $this->belongsTo(Bill::class, 'bill_id', 'id');
+    public function tours(){
+        return $this->belongsTo(Tour::class, 'tour_id', 'id');
+    }
+
+    public function customers(){
+        return $this->hasMany(Customer::class, 'order_id','id');
     }
 
 }

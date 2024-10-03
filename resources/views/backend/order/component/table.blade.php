@@ -26,11 +26,11 @@
                 <td>
                     {{ $order->order_date }}
                 </td>
-                <td>
-                    {{ $order->start_date }}
+                <<td>
+                    {{ $order->tours->start_date }}
                 </td>
                 <td>
-                    {{ $order->end_date }}
+                    {{ $order->tours->end_date }}
                 </td>
                 <td class="text-center">  
                     <a href="{{ route('order.accept', $order->id) }}" class="btn btn-warning">Duyệt</a>

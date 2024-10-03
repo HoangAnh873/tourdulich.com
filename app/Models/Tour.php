@@ -22,4 +22,7 @@ class Tour extends Model
     protected $tables = 'tours';
     protected $primaryKey = 'id';
 
+    public function orders(){
+        return $this->hasMany(Order::class, 'bill_id','id');
+    }
 }

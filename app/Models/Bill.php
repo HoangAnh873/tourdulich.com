@@ -16,7 +16,5 @@ class Bill extends Model
     protected $tables = 'bills';
     protected $primaryKey = 'id';
 
-    public function orders(){
-        return $this->hasMany(Order::class, 'bill_id','id');
-    }
+    
 }
