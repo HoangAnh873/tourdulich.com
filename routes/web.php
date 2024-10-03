@@ -32,6 +32,7 @@ Route::get('/login/index', [CustomerController::class, 'indexLogin'])->name('log
 Route::get('/register/index', [CustomerController::class, 'indexRegister'])->name('register.index');
 Route::post('/customer/login', [CustomerController::class, 'login'])->name('customer.login');
 Route::post('/customer/register', [CustomerController::class, 'register'])->name('customer.register');
+Route::get('/logout/index', [CustomerController::class, 'logout'])->name('logout');
 
 // Route::post('store', [CustomerController::class, 'store'])->name
 //     ('register.store');

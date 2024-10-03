@@ -26,6 +26,9 @@
         </li>
         <li><a href="blog.html">blog</a></li>
         <li><a href="hotro.html">Hỗ trợ</a></li>
+        @if (Auth::guard('customer')->check())
+        <li><a href="{{ route('logout') }}">Đăng Xuất</a></li>
+        @endif
       </ul>
       <!-- User -->
       <div
@@ -35,8 +38,24 @@
         <i class="fas fa-user"></i>
       </div>
       <div class="login-btn">
-        <a href="{{ route('login.index') }}">Đăng nhập</a>
+        @if (Auth::guard('customer')->check())
+          <a href="" id="login-link">
+            {{ Auth::guard('customer')->user()->name}}
+          </a>
+        @else
+          <a href="{{ route('login.index') }}" id="login-link">
+            Đăng Nhập
+          </a>
+        @endif
       </div>
+      <script>
+        document.getElementById('login-link').addEventListener('click', function(event) {
+            if ({{ Auth::guard('customer')->check() }}) {
+                event.preventDefault();
+                alert('Bạn đã đăng nhập rồi!');
+            }
+          });
+      </script>
     </div>
 
     <!-- End menu nav -->

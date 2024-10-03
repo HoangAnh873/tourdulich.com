@@ -88,7 +88,7 @@
             <i class="fas fa-user"></i>
           </div>
           <div class="login-btn">
-            <a href=" {{ route('register.index') }}">Đăng Ký</a>
+            <a href=" {{ route('register.index') }}"> Đăng Nhập </a>
           </div>
         </div>
 

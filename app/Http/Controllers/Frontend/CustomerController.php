@@ -76,6 +76,12 @@ class CustomerController extends Controller
         return back()->with('error','Email hoặc Mật khẩu không chính xác');
     }
 
+    public function logout(){
+
+        Auth::guard('customer')->logout();
+        return redirect()->route('home.index')->with('success', 'Đăng xuất thành công');;
+    }
+
     private function config(){
         return [
             'css' => [
