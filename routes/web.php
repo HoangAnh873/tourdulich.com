@@ -14,6 +14,10 @@ use App\Http\Middleware\AuthenticateMiddleware;
 
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\CustomerController;
+use App\Http\Controllers\Frontend\BookingController;
+use App\Http\Controllers\Frontend\ServiceController;
+use App\Http\Controllers\Frontend\BlogController;
+use App\Http\Controllers\Frontend\HelpController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,14 +32,20 @@ use App\Http\Controllers\Frontend\CustomerController;
 /* FRONTEND ROUTES*/
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
+/* LOGIN LOGOUT CUSTOMER */
 Route::get('/login/index', [CustomerController::class, 'indexLogin'])->name('login.index');
 Route::get('/register/index', [CustomerController::class, 'indexRegister'])->name('register.index');
 Route::post('/customer/login', [CustomerController::class, 'login'])->name('customer.login');
 Route::post('/customer/register', [CustomerController::class, 'register'])->name('customer.register');
 Route::get('/logout/index', [CustomerController::class, 'logout'])->name('logout');
 
-// Route::post('store', [CustomerController::class, 'store'])->name
-//     ('register.store');
+Route::get('/home/booking', [BookingController::class, 'index'])->name('home.booking');
+
+Route::get('/home/service', [ServiceController::class, 'index'])->name('home.service');
+
+Route::get('/home/blog', [BlogController::class, 'index'])->name('home.blog');
+
+Route::get('/home/help', [HelpController::class, 'index'])->name('home.help');
 
 /* BACKEND ROUTES*/
 Route::get('dashboard/index', [DashboardController::class, 'index'])->name

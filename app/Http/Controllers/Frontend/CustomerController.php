@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\AuthRequest;
 
 use App\Services\Interfaces\CustomerServiceInterface as CustomerService;
 use App\Repositories\Interfaces\CustomerRepositoryInterface as CustomerRepository;
 
 use App\Http\Requests\StoreCustomerRequest;
-use App\Http\Requests\UpdateCustomerRequest;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -53,18 +50,6 @@ class CustomerController extends Controller
         return redirect()->route('customer.index')->with('error','Đăng Ký tài khoản 
         không thành công');
     }
-
-    
-
-    // public function login(StoreCustomerRequest $request){
-    //     $credentials = $request->only('email', 'password');
-    //     if (Auth::attempt($credentials)){
-    //         return redirect()->route('home.index')->with('success','Đăng
-    //         nhập thành công');
-    //     }
-    //     return redirect()->route('login.index')->with('error','Email hoặc Mật
-    //     khẩu không chính xác');
-    // }
 
     public function login(Request $request)
     {
