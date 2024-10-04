@@ -30,7 +30,15 @@ use App\Http\Controllers\Frontend\HelpController;
 */
 
 /* FRONTEND ROUTES*/
+
+/* TRANG CHU */
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+
+/* LOCATION */
+Route::get('/home/sapa', [HomeController::class, 'sapa'])->name('home.sapa');
+Route::get('/home/dalat', [HomeController::class, 'dalat'])->name('home.dalat');
+Route::get('/home/vungtau', [HomeController::class, 'vungtau'])->name('home.vungtau');
+Route::get('/home/cantho', [HomeController::class, 'cantho'])->name('home.cantho');
 
 /* LOGIN LOGOUT CUSTOMER */
 Route::get('/login/index', [CustomerController::class, 'indexLogin'])->name('login.index');
@@ -46,6 +54,7 @@ Route::get('/home/service', [ServiceController::class, 'index'])->name('home.ser
 Route::get('/home/blog', [BlogController::class, 'index'])->name('home.blog');
 
 Route::get('/home/help', [HelpController::class, 'index'])->name('home.help');
+
 
 /* BACKEND ROUTES*/
 Route::get('dashboard/index', [DashboardController::class, 'index'])->name

@@ -16,6 +16,34 @@ class HomeController extends FrontendController
         ));
     }
 
+    public function sapa(){
+        $config = $this->config();
+        return view('frontend.homepage.home.location.sapa', compact(
+            'config',
+        ));
+    }
+
+    public function dalat(){
+        $config = $this->config();
+        return view('frontend.homepage.home.location.dalat', compact(
+            'config',
+        ));
+    }
+
+    public function vungtau(){
+        $config = $this->config();
+        return view('frontend.homepage.home.location.vungtau', compact(
+            'config',
+        ));
+    }
+
+    public function cantho(){
+        $config = $this->config();
+        return view('frontend.homepage.home.location.cantho', compact(
+            'config',
+        ));
+    }
+
     private function config(){
         return [];
     }

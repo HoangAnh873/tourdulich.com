@@ -35,53 +35,10 @@
     </script>
 
     <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function () {
-        FB.init({
-          xfbml: true,
-          version: "v12.0",
-        });
-      };
-
-      (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "facebook-jssdk");
-    </script>
+    @include('frontend.component.script')
+    
     <div id="main">
-      <header id="header">
-        <!-- Begin menu nav -->
-        <div class="menu_top">
-          <a href=" {{ route('home.index') }} "><img src="/frontend/img/GoodTrip5.png" alt="Logonav" /></a>
-          <ul id="nav">
-            <li><a href="{{ route('home.index') }}">Trang chủ</a></li>
-            <li><a href="{{ route('home.service') }}">Dịch vụ</a></li>
-            <li><a href="{{ route('home.booking') }}">Booking</a></li>
-            <li><a href="{{ route('home.blog') }}">blog</a></li>
-            <li><a href="{{ route('home.help') }}">Hỗ trợ</a></li>
-            @if (Auth::guard('customer')->check())
-            <li><a href="{{ route('logout') }}">Đăng Xuất</a></li>
-            @endif
-          </ul>
-          <!-- User -->
-          <div
-            class="user-section"
-            onclick="alert('Hãy đăng nhập để sử dụng dịch vụ')"
-          >
-            <i class="fas fa-user"></i>
-          </div>
-          <div class="login-btn">
-            <a href="{{ route('login.index') }}">Đăng nhập</a>
-          </div>
-        </div>
-
-        <!-- End menu nav -->
-      </header>
+      @include('frontend.component.header')
       <!-- ============================== -->
       <!-- Booking -->
       <div id="booking">
@@ -131,58 +88,7 @@
       </div>
       <!-- End Booking -->
       <!-- ============================== -->
-      <div id="footer">
-        <div class="footer-top">
-          <div class="contact-container center">
-            <div class="contact-top">
-              <div class="introduct">
-                <div class="container">
-                  <div class="content center">
-                    <h5 class="t-black">ĐI KHẮP VIỆT NAM</h5>
-                    <span class="line gold"></span>
-                    <h2 class="t-content">
-                      ĐỪNG QUÊN RẰNG CÒN CÓ
-                      <span class="t-gold">GOODTRIP</span>
-                    </h2>
-                    <h5 class="t-black bot-content">
-                      HÃY GIỮ LIÊN LẠC VỚI GOODTRIP
-                    </h5>
-                  </div>
-                </div>
-              </div>
-              <div class="container-email">
-                <input
-                  id="form_email"
-                  type="email"
-                  name="email"
-                  class="form-control"
-                  placeholder="Để lại Email của bạn*"
-                  required="required"
-                />
-                <input type="submit" name="submit" id="submit" value="Giử" />
-              </div>
-            </div>
-            <div class="contact-bot">
-              <h5 class="t-black">GIỮ LIÊN LẠC VỚI CHÚNG TÔI</h5>
-              <span class="line gold"></span>
-              <div class="mxh">
-                <a href="" class="primary-btn"
-                  ><i class="fab fa-facebook-square" aria-hidden="true"></i
-                ></a>
-                <a href="" class="primary-btn"
-                  ><i class="fab fa-instagram" aria-hidden="true"></i
-                ></a>
-                <a href="" class="primary-btn"
-                  ><i class="fab fa-twitter" aria-hidden="true"></i
-                ></a>
-              </div>
-            </div>
-            <div class="footer-end">
-              2024 - Xin Cảm Ơn
-            </div>
-          </div>
-        </div>
-      </div>
+      @include('frontend.component.footer')
     </div>
   </body>
 </html>

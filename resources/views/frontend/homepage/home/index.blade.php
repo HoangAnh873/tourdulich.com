@@ -28,7 +28,7 @@
             Sapa là “nơi gặp gỡ giữa trời và đất” cảnh sắc thiên nhiên
             hùng vĩ bậc nhất miền Bắc
           </p>
-          <a href="Sapa.html" class="btn">ĐẾN ĐÓ</a>
+          <a href="{{ route('home.sapa') }}" class="btn">ĐẾN ĐÓ</a>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
             Đà lạt nổi tiếng với các đồi thông và "lời nguyền chia tay"
             của các cặp đôi!
           </p>
-          <a href="Dalat.html" class="btn">ĐẾN ĐÓ</a>
+          <a href="{{ route('home.dalat') }}" class="btn">ĐẾN ĐÓ</a>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@
             Vũng Tàu từ lâu đã nổi tiếng với những bãi tắm đẹp và vô vàng
             những món ăn ngon.
           </p>
-          <a href="vungtau.html" class="btn">ĐẾN ĐÓ!</a>
+          <a href="{{ route('home.vungtau') }}" class="btn">ĐẾN ĐÓ!</a>
         </div>
       </div>
     </div>
@@ -67,7 +67,7 @@
             Cần Thơ được gọi là xứ Tây Đô. Nổi tiếng với cảnh sắc phong
             phú và trong lành.
           </p>
-          <a href="cantho.html" class="btn">ĐẾN ĐÓ!</a>
+          <a href="{{ route('home.cantho') }}" class="btn">ĐẾN ĐÓ!</a>
         </div>
       </div>
     </div>

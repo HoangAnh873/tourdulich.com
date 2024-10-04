@@ -39,6 +39,5 @@
           });
       </script>
     </div>
-
     <!-- End menu nav -->
-  </header>
+</header>

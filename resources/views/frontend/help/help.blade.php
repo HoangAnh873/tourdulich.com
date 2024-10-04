@@ -36,138 +36,40 @@
     </script>
 
     <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function () {
-        FB.init({
-          xfbml: true,
-          version: "v12.0",
-        });
-      };
-
-      (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "facebook-jssdk");
-    </script>
+    @include('frontend.component.script')
+    
     <div id="main">
-      <header id="header">
-        <!-- Begin menu nav -->
-        <div class="menu_top">
-            <a href="{{ route('home.index') }}"><img src="/frontend/img/GoodTrip5.png" alt="Logonav" /></a>
-            <ul id="nav">
-              <li><a href="{{ route('home.index') }}">Trang chủ</a></li>
-              <li><a href="{{ route('home.service') }}">Dịch vụ</a></li>
-              <li><a href="{{ route('home.booking') }}">Booking</a></li>
-              <li><a href="{{ route('home.blog') }}">blog</a></li>
-              <li><a href="{{ route('home.help') }}">Hỗ trợ</a></li>
-              @if (Auth::guard('customer')->check())
-              <li><a href="{{ route('logout') }}">Đăng Xuất</a></li>
-              @endif
-            </ul>
-            <!-- User -->
-            <div
-              class="user-section"
-              onclick="alert('Hãy đăng nhập để sử dụng dịch vụ')"
-            >
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="login-btn">
-              <a href="{{ route('login.index') }}">Đăng nhập</a>
-            </div>
+        @include('frontend.component.header')
+        <!-- Contact -->
+        <div class="menu-contact">
+          <a href="/index.html"></a> / <p class="menu-1"></p>
         </div>
-        <!-- End menu nav -->
-      </header>
-<!-- Contact -->
-<div class="menu-contact">
-  <a href="/index.html"></a> / <p class="menu-1"></p>
-</div>
-<!-- contact -->
-<div class="contact-main">
-
-  <ul class="contact">
-      <h3 class="h3">CONTACT</h3>
-      <li>Hotline: 0382787268</li>
-      <li>IG: @goodtripvina</li>
-      <li>FB: <a href="https://www.facebook.com/GoodTrip-112627521317796">FB.COM/GoodTrip</a></li>
-      <li>Chi nhánh I: 445 Sư Vạn Hạnh, P.12, Q.10, TP.HCM.</li>
-      <li>Chi nhánh II: 48 Trần Quang Diệu, P.14, Q.3, TP.HCM.</li>
-      <li>Chi nhánh III: 350 Điện Biên Phủ, P.17, Q. Bình Thạnh, TP.HCM.</li>
-      <li>Chi nhánh IV: G-Town 2, 136 Nguyễn Hồng Đào, P.14, Q.Tân Bình, TP.HCM.</li>
-      <li>Chi nhánh V: 463 Quang Trung, P.10, Q. Gò Vấp, TP.HCM.</li>
-      <li>Chi nhánh VI: TNP - 26 Lý Tự Trọng, P. Bến Nghé, Q.1, TP.HCM.</li>
-      <li>Chi nhánh VII: TNP (Sense Market) - Đối Diện Số 90 Lê Lai, P. Bến Nghé, Q.1, TP.HCM.</li>
-      <li>Chi nhánh VIII: TNP Hanoi - Vincom Bà Triệu, Tầng 7, Tháp 2, 191 Bà Triệu, Lê Đại Hành, Hai Bà Trưng, Hà
-          Nội.</li>
-      <li>Chi nhánh IX: 48 Đường Thành, Cửa Đông, Hoàn Kiếm, Hà Nội.</li>
-      <li>Chi nhánh X: Cần Thơ: Shop House Vincom Xuân Khánh, PG2-08, Đường 30 tháng 4, Xuân Khánh, Cần Thơ.</li>
-      <li>Chi nhánh XI: Biên Hoà: Shop House Vincom Biên Hoà,PG2-06, 1096 Phạm Văn Thuận, Tân Mai, Biên Hoà.</li>
-  </ul>
-
-
-  ______________________
-
-</div>
-</div>
+        <!-- contact -->
+        <div class="contact-main">
+          <ul class="contact">
+              <h3 class="h3">CONTACT</h3>
+              <li>Hotline: 0382787268</li>
+              <li>IG: @goodtripvina</li>
+              <li>FB: <a href="https://www.facebook.com/GoodTrip-112627521317796">FB.COM/GoodTrip</a></li>
+              <li>Chi nhánh I: 445 Sư Vạn Hạnh, P.12, Q.10, TP.HCM.</li>
+              <li>Chi nhánh II: 48 Trần Quang Diệu, P.14, Q.3, TP.HCM.</li>
+              <li>Chi nhánh III: 350 Điện Biên Phủ, P.17, Q. Bình Thạnh, TP.HCM.</li>
+              <li>Chi nhánh IV: G-Town 2, 136 Nguyễn Hồng Đào, P.14, Q.Tân Bình, TP.HCM.</li>
+              <li>Chi nhánh V: 463 Quang Trung, P.10, Q. Gò Vấp, TP.HCM.</li>
+              <li>Chi nhánh VI: TNP - 26 Lý Tự Trọng, P. Bến Nghé, Q.1, TP.HCM.</li>
+              <li>Chi nhánh VII: TNP (Sense Market) - Đối Diện Số 90 Lê Lai, P. Bến Nghé, Q.1, TP.HCM.</li>
+              <li>Chi nhánh VIII: TNP Hanoi - Vincom Bà Triệu, Tầng 7, Tháp 2, 191 Bà Triệu, Lê Đại Hành, Hai Bà Trưng, Hà
+                  Nội.</li>
+              <li>Chi nhánh IX: 48 Đường Thành, Cửa Đông, Hoàn Kiếm, Hà Nội.</li>
+              <li>Chi nhánh X: Cần Thơ: Shop House Vincom Xuân Khánh, PG2-08, Đường 30 tháng 4, Xuân Khánh, Cần Thơ.</li>
+              <li>Chi nhánh XI: Biên Hoà: Shop House Vincom Biên Hoà,PG2-06, 1096 Phạm Văn Thuận, Tân Mai, Biên Hoà.</li>
+          </ul>
+        </div>
+      </div>
 
       <!-- ============================== -->
 
-      <div id="footer">
-        <div class="footer-top">
-          <div class="contact-container center">
-            <div class="contact-top">
-              <div class="introduct">
-                <div class="container">
-                  <div class="content center">
-                    <h5 class="t-black">ĐI KHẮP VIỆT NAM</h5>
-                    <span class="line gold"></span>
-                    <h2 class="t-content">
-                      ĐỪNG QUÊN RẰNG CÒN CÓ
-                      <span class="t-gold">GOODTRIP</span>
-                    </h2>
-                    <h5 class="t-black bot-content">
-                      HÃY GIỮ LIÊN LẠC VỚI GOODTRIP
-                    </h5>
-                  </div>
-                </div>
-              </div>
-              <div class="container-email">
-                <input
-                  id="form_email"
-                  type="email"
-                  name="email"
-                  class="form-control"
-                  placeholder="Để lại Email của bạn*"
-                  required="required"
-                />
-                <input type="submit" name="submit" id="submit" value="Giử" />
-              </div>
-            </div>
-            <div class="contact-bot">
-              <h5 class="t-black">GIỮ LIÊN LẠC VỚI CHÚNG TÔI</h5>
-              <span class="line gold"></span>
-              <div class="mxh">
-                <a href="" class="primary-btn"
-                  ><i class="fab fa-facebook-square" aria-hidden="true"></i
-                ></a>
-                <a href="" class="primary-btn"
-                  ><i class="fab fa-instagram" aria-hidden="true"></i
-                ></a>
-                <a href="" class="primary-btn"
-                  ><i class="fab fa-twitter" aria-hidden="true"></i
-                ></a>
-              </div>
-            </div>
-            <div class="footer-end">
-              2024 - Xin Cảm Ơn
-            </div>
-          </div>
-        </div>
-      </div>
+      @include('frontend.component.footer')
     </div>
   </body>
 </html>
