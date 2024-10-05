@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/frontend/icon/themify-icons/themify-icons.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <link rel="shortcut icon" href="img/GoodTrip5.png" />
+    <link rel="shortcut icon" href="/frontend/img/GoodTrip5.png" />
     <link rel="stylesheet" href="frontend/css/main.css" />
     <link rel="stylesheet" href="frontend/css/header.css" />
     <link rel="stylesheet" href="frontend/css/content.css" />

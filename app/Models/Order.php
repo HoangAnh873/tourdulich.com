@@ -4,17 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
-
+        'tour_id',
+        'id_customer',
+        'order_date',
+        'quantity'
     ];
 
     
-    protected $tables = 'oders';
+    protected $tables = 'orders';
     protected $primaryKey = 'id';
 
     public function tours(){
@@ -22,7 +26,8 @@ class Order extends Model
     }
 
     public function customers(){
-        return $this->hasMany(Customer::class, 'order_id','id');
+        return $this->belongsTo(Customer::class, 'id_customer', 'id');
     }
+
 
 }

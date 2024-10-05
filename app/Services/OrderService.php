@@ -33,10 +33,24 @@ class OrderService implements OrderServiceInterface
         return $orders;
     }
 
+    public function accept($id){
+        DB::beginTransaction();
+        try{
+            $order = $this->orderRepository->accept($id);
+            DB::commit();
+            return true;
+        }catch(\Exception $e){
+            DB::rollBack();
+            // Log::error($e->getMessage());
+            echo $e->getMessage(); die();
+            return false;
+        }
+    }
+
     public function destroy($id){
         DB::beginTransaction();
         try{
-            $tour = $this->orderRepository->delete($id);
+            $order = $this->orderRepository->delete($id);
             DB::commit();
             return true;
         }catch(\Exception $e){
@@ -50,11 +64,9 @@ class OrderService implements OrderServiceInterface
     private function paginateSelect(){
         return [
             'id',
-            'customer_name',
-            'email',
-            'tour_name',
-            'order_date',
+            'id_customer',
             'tour_id',
+            'order_date',
         ];
     }
 

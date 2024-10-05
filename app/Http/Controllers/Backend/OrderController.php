@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Services\Interfaces\OrderServiceInterface as OrderService;
 use App\Repositories\Interfaces\ProvinceRepositoryInterface as ProvinceRepository;
 use App\Repositories\Interfaces\OrderRepositoryInterface as OrderRepository;
+use Mail;
+
 class OrderController extends Controller
 {
     protected $orderService;
@@ -34,6 +36,14 @@ class OrderController extends Controller
             'config',
             'orders'
         ));
+    }
+
+    public function accept($id){
+        $name = 'Đặng Hoàng Anh';
+        Mail::send('backend.email.test', compact('name'), function($email) use($name){
+            $email->subject('Demo TripGood');
+            $email->to('hoanganhh080703@gmail.com', $name);
+        });
     }
 
     public function delete($id){

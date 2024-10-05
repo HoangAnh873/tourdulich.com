@@ -15,18 +15,18 @@
             @foreach($orders as $order)
             <tr>
                 <td>
-                    {{ $order->customer_name }}
+                    {{ $order->customers->name }}
                 </td>
                 <td>
-                    {{ $order->email }}
+                    {{ $order->customers->email }}
                 </td>
                 <td>
-                    {{ $order->tour_name }}
+                    {{ $order->tours->name }}
                 </td>
                 <td>
                     {{ $order->order_date }}
                 </td>
-                <<td>
+                <td>
                     {{ $order->tours->start_date }}
                 </td>
                 <td>
@@ -34,9 +34,8 @@
                 </td>
                 <td class="text-center">  
                     <a href="{{ route('order.accept', $order->id) }}" class="btn btn-warning">Duyệt</a>
-                    <a href="{{ route('order.delete', $order->id) }}" class="btn btn-danger">hủy</i></a>
+                    <a href="{{ route('order.delete', $order->id) }}" class="btn btn-danger">hủy</a>
                 </td>
-        
             </tr>
             @endforeach
         @endif

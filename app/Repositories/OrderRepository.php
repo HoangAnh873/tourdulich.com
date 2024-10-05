@@ -29,9 +29,8 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
         ){
         $query = $this->model->select($column)->where(function($query) use ($condition){
             if(isset($condition['keyword']) && !empty($condition['keyword'])){
-                $query->where('customer_name', 'LIKE', '%'.$condition['keyword'].'%')
-                      ->orWhere('email', 'LIKE', '%'.$condition['keyword'].'%') 
-                      ->orWhere('tour_name', 'LIKE', '%'.$condition['keyword'].'%');
+                $query->where('id_customer', 'LIKE', '%'.$condition['keyword'].'%')
+                      ->orWhere('order_date', 'LIKE', '%'.$condition['keyword'].'%');
             }
             
             return $query;
@@ -45,4 +44,8 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
                     ->withPath(env('APP_URL').$extend['path']);
     } 
 
+    // public function accept(int $id = 0){
+    //     $model = $this->model->create($payload);
+    //     return $this->findById($id)->delete();
+    // }
 }
