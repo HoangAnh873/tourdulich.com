@@ -9,5 +9,5 @@ namespace App\Services\Interfaces;
 interface OrderServiceInterface
 {
     public function paginate($request);
-    public function accept($id);
+    // public function accept($id);
 }

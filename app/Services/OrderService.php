@@ -33,19 +33,19 @@ class OrderService implements OrderServiceInterface
         return $orders;
     }
 
-    public function accept($id){
-        DB::beginTransaction();
-        try{
-            $order = $this->orderRepository->accept($id);
-            DB::commit();
-            return true;
-        }catch(\Exception $e){
-            DB::rollBack();
-            // Log::error($e->getMessage());
-            echo $e->getMessage(); die();
-            return false;
-        }
-    }
+    // public function accept($id){
+    //     DB::beginTransaction();
+    //     try{
+    //         $order = $this->orderRepository->accept($id);
+    //         DB::commit();
+    //         return true;
+    //     }catch(\Exception $e){
+    //         DB::rollBack();
+    //         // Log::error($e->getMessage());
+    //         echo $e->getMessage(); die();
+    //         return false;
+    //     }
+    // }
 
     public function destroy($id){
         DB::beginTransaction();

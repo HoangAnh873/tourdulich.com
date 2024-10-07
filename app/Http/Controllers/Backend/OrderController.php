@@ -39,11 +39,18 @@ class OrderController extends Controller
     }
 
     public function accept($id){
-        $name = 'Đặng Hoàng Anh';
-        Mail::send('backend.email.test', compact('name'), function($email) use($name){
-            $email->subject('Demo TripGood');
-            $email->to('hoanganhh080703@gmail.com', $name);
+        $order = $this->orderRepository->findById($id);
+        $customerName = $order->customers->name;
+        $price = $order->tours->price;
+        // $customerEmail = $order->customers->email; 
+        // dd($price);
+        Mail::send('backend.email.order_successful', compact('customerName', 'price'), function ($email) use ($customerName) {
+            $email->subject('ĐẶT TOUR THÀNH CÔNG');
+            $email->to('hoanganhh080703@gmail.com', $customerName);
         });
+        $this->orderService->destroy($id);
+        return redirect()->route('order.index')->with('success','Duyệt đơn 
+        đặt tour thành công');
     }
 
     public function delete($id){
@@ -59,7 +66,16 @@ class OrderController extends Controller
     }
 
     public function destroy($id){
+        
         if($this->orderService->destroy($id)){
+            $order = $this->orderRepository->findById($id);
+            $customerName = $order->customers->name;
+            // $customerEmail = $order->customers->email; 
+            // dd($price);
+            Mail::send('backend.email.order_failed', compact('customerName'), function ($email) use ($customerName) {
+                $email->subject('ĐẶT TOUR THẤT BẠI');
+                $email->to('hoanganhh080703@gmail.com', $customerName);
+            });
             return redirect()->route('order.index')->with('success','Hủy đơn 
             đặt tour thành công');
         }

@@ -25,7 +25,7 @@
                                     <input 
                                         type="text"
                                         name="customer_name"
-                                        value="{{ old('customer_name', ($order->customer_name) ?? '') }}"
+                                        value="{{ old('customer_name', ($order->customers->name) ?? '') }}"
                                         class="form-control"
                                         placeholder=""
                                         autocomplete="off"
