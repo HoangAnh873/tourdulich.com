@@ -48,6 +48,7 @@ Route::post('/customer/register', [CustomerController::class, 'register'])->name
 Route::get('/logout/index', [CustomerController::class, 'logout'])->name('logout');
 
 Route::get('/home/booking', [BookingController::class, 'index'])->name('home.booking');
+Route::get('/home/booking/order', [BookingController::class, 'order'])->name('booking.order');
 
 Route::get('/home/service', [ServiceController::class, 'index'])->name('home.service');
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Tour;
 
 // use App\Services\Interfaces\ServiceServiceInterface as ServiceService;
 // use App\Repositories\Interfaces\ServiceRepositoryInterface as ServiceRepository;
@@ -16,7 +17,6 @@ class ServiceController extends Controller
 {
     // protected $bookingService;
     // protected $bookingRepository;
- 
     public function __construct(
         // BookingService $bookingService,
         // BookingRepository $bookingRepository,
@@ -25,11 +25,14 @@ class ServiceController extends Controller
     //    $this->bookingRepository = $bookingRepository;
     }
 
-    public function index(){
+    public function index(Request $request){
+        // $service = $this->serviceRepository->findById($id);
+        $tours = Tour::all(); 
         $config = $this->config();
         $config['seo'] = config('apps.service');
         return view('frontend.service.service', compact(
             'config',
+            'tours',
         ));
     }
 

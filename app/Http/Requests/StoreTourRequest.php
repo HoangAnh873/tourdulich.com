@@ -26,6 +26,7 @@ class StoreTourRequest extends FormRequest
             'start_date' => 'required|date|after:today',
             'end_date' => 'required|date|after_or_equal:start_date',
             'price' => 'required|numeric',
+            'img' => 'required',
         ];
     }
 
@@ -40,6 +41,7 @@ class StoreTourRequest extends FormRequest
             'end_date.after_or_equal' => 'Thời gian kết thúc phải sau thời gian bắt đầu',
             'price.required' => 'Bạn chưa nhập giá tour',
             'price.numeric' => 'Giá tour chưa chính xác',
+            'img.required' => 'Bạn chưa chọn ảnh tour',
         ];
     }
 }

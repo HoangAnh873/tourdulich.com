@@ -119,7 +119,9 @@ class TourService implements TourServiceInterface
             'start_date',
             'end_date',
             'price',
-            'publish'
+            'img',
+            'publish',
+
         ];
     }
 

@@ -126,6 +126,8 @@ class TourController extends Controller
             'js' => [
                 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
                 'backend/library/location.js',
+                'backend/plugins/ckfinder_2/ckfinder.js',
+                'backend/library/finder.js',
             ]
         ];
 

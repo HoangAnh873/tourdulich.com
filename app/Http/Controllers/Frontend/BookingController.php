@@ -33,6 +33,10 @@ class BookingController extends Controller
         ));
     }
 
+    public function order(Request $request){
+
+    }
+
     
 
     private function config(){
