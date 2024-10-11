@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="icon/themify-icons/themify-icons.css" />
+    {{-- <link rel="stylesheet" href="icon/themify-icons/themify-icons.css" /> --}}
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -20,21 +20,6 @@
     <title>| GoodTrip Việt Nam</title>
   </head>
   <body>
-    <!-- Messenger Plugin chat Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Plugin chat code -->
-    <div id="fb-customer-chat" class="fb-customerchat"></div>
-
-    <script>
-      var chatbox = document.getElementById("fb-customer-chat");
-      chatbox.setAttribute("page_id", "112627521317796");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-
-    <!-- Your SDK code -->
-    @include('frontend.component.script')
-
     <div id="main">
       @include('frontend.component.header')
       <!-- BAT DAU BLOG -->

@@ -1,4 +1,5 @@
 <!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,7 +22,20 @@
     <title>| GoodTrip Việt Nam</title>
   </head>
   <body>
-    
+
+    {{-- Dùng để khóa giá trị ngày bắt đầu và ngày kết thúc không cho thay đổi --}}
+    <script>
+      window.onload = function() {
+          var nameInput = document.getElementsByName("name")[0];
+          var startDateInput = document.getElementsByName("start_date")[0];
+          var endDateInput = document.getElementsByName("end_date")[0];
+
+          nameInput.disabled = true;
+          startDateInput.disabled = true;
+          endDateInput.disabled = true;
+      };
+    </script>
+
     <div id="main">
       @include('frontend.component.header')
       <!-- ============================== -->
@@ -45,26 +59,26 @@
         </div>
         <div class="container-booking">
           <img src="/frontend/img/bookimg.png" alt="" />
-          <form action="">
+          <form action="{{ route('customer.order', [$tour->id, $customer->id] )}}" method="post">
+            @csrf
             <div class="inputBox">
               <h3>Bạn muốn đi đâu?</h3>
-              <input type="text" placeholder="chọn một địa điểm" />
+              <input type="text" placeholder="chọn một địa điểm" name="name" value="{{ $tour->name}}"/>
+            </div> 
+            <div class="inputBox">
+              <h3>Bạn đặt bao nhiêu thành viên?</h3>
+              <input type="number" name="quantity" placeholder="số người tham gia du lịch" value="" />
             </div>
             <div class="inputBox">
-              <h3>Có bao nhiêu người cùng tham gia?</h3>
-              <input type="number" placeholder="số người tham gia du lịch" />
+              <h3>Ngày bắt đầu (tháng/ngày/năm)</h3>
+              <input type="date" name="start_date" value="{{ $tour->start_date }}"/>
             </div>
             <div class="inputBox">
-              <h3>Ngày bắt đầu chuyến đi?</h3>
-              <input type="date" />
-            </div>
-            <div class="inputBox">
-              <h3>Ngày kết thúc chuyến đi?</h3>
-              <input type="date" />
+              <h3>Ngày kết thúc (tháng/ngày/năm)</h3>
+              <input type="date" name="end_date" value="{{ $tour->end_date }}"/>
             </div>
             <input
-              type="button"
-              onclick="alert('Bạn đã hãy nạp lần đầu để được sử dụng dịch vụ')"
+              type="submit"
               class="btn"
               value="Đặt ngay"
             />

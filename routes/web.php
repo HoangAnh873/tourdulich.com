@@ -47,10 +47,13 @@ Route::post('/customer/login', [CustomerController::class, 'login'])->name('cust
 Route::post('/customer/register', [CustomerController::class, 'register'])->name('customer.register');
 Route::get('/logout/index', [CustomerController::class, 'logout'])->name('logout');
 
+/* BOOKING */
 Route::get('/home/booking', [BookingController::class, 'index'])->name('home.booking');
 Route::get('/home/booking/order', [BookingController::class, 'order'])->name('booking.order');
 
 Route::get('/home/service', [ServiceController::class, 'index'])->name('home.service');
+Route::get('/home/service/{id}/order', [ServiceController::class, 'order'])->where(['id' => '[0-9]+'])
+->name('service.order');
 
 Route::get('/home/blog', [BlogController::class, 'index'])->name('home.blog');
 
@@ -107,8 +110,10 @@ Route::group(['prefix' => 'bill'], function(){
 
 /* ORDER */
 Route::group(['prefix' => 'order'], function(){
-    Route::get('index', [OrderController::class, 'index'])->name
-    ('order.index')->middleware('admin');
+    Route::get('index', [OrderController::class, 'index'])
+    ->name('order.index')->middleware('admin');
+    Route::post('tour/{tour_id}/customer/{customer_id}', [OrderController::class, 'store'])
+    ->name('customer.order');
     Route::get('{id}/accept', [OrderController::class, 'accept'])->where(['id' => '[0-9]+'])
     ->name('order.accept')->middleware('admin');
     Route::get('{id}/delete', [OrderController::class, 'delete'])->where(['id' => '[0-9]+'])

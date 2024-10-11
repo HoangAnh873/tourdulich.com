@@ -12,6 +12,9 @@ use App\Http\Requests\StoreBookingRequest;
 
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\Tour;
+use App\Models\Customer;
+
 class BookingController extends Controller
 {
     // protected $bookingService;
@@ -34,7 +37,17 @@ class BookingController extends Controller
     }
 
     public function order(Request $request){
-
+        $tourId = $request->query('tour');
+        $tour = Tour::find($tourId);
+        $customerId =  $request->query('customer');
+        $customer = Customer::find($customerId);
+        $config = $this->config();
+        $config['seo'] = config('apps.booking');
+        return view('frontend.booking.order', compact(
+            'config',
+            'tour',
+            'customer',
+        ));
     }
 
     

@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="icon/themify-icons/themify-icons.css" />
+    {{-- <link rel="stylesheet" href="icon/themify-icons/themify-icons.css" /> --}}
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -19,79 +19,10 @@
     <title>| GoodTrip Việt Nam</title>
   </head>
   <body>
-    <!-- Messenger Plugin chat Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Plugin chat code -->
-    <div id="fb-customer-chat" class="fb-customerchat"></div>
-
-    <script>
-      var chatbox = document.getElementById("fb-customer-chat");
-      chatbox.setAttribute("page_id", "112627521317796");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function () {
-        FB.init({
-          xfbml: true,
-          version: "v12.0",
-        });
-      };
-
-      (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "facebook-jssdk");
-    </script>
     <div id="main">
       <header id="header">
         <!-- Begin menu nav -->
-        <div class="menu_top">
-          <a href="{{ route('home.index') }}"><img src="/frontend/img/GoodTrip5.png" alt="Logonav" /></a>
-          <ul id="nav">
-            <li><a href="{{ route('home.index') }}">Trang chủ</a></li>
-            <li>
-              <a href="#">Tìm kiếm</a>
-              <div class="container-1">
-                <input
-                  class="subnav timkiem"
-                  type="search"
-                  placeholder="Tìm kiếm..."
-                />
-              </div>
-            </li>
-            <li>
-              <a href="#services">
-                Dịch vụ
-                <i class="dow-icon ti-arrow-circle-down"></i>
-              </a>
-              <ul class="subnav">
-                <li><a href="booking.html">Booking</a></li>
-                <li><a href="goidulich.html">Gói du lịch</a></li>
-              </ul>
-            </li>
-            <li><a href="blog.html">blog</a></li>
-            <li><a href="hotro.html">Hỗ trợ</a></li>
-          </ul>
-          <!-- User -->
-          <div
-            class="user-section"
-            onclick="alert('Hãy đăng nhập để sử dụng dịch vụ')"
-          >
-            <i class="fas fa-user"></i>
-          </div>
-          <div class="login-btn">
-            <a href=" {{ route('register.index') }}"> Đăng Nhập </a>
-          </div>
-        </div>
-
+        @include('frontend.component.header')
         <!-- End menu nav -->
       </header>
       <!-- REGISTER -->

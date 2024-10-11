@@ -33,6 +33,25 @@ class OrderService implements OrderServiceInterface
         return $orders;
     }
 
+    public function create($request, $tour_id, $id_customer){
+        DB::beginTransaction();
+        try{
+            $payload = $request->except(['_token','send','name','start_date','end_date']);
+            $payload['tour_id'] = $tour_id;
+            $payload['id_customer'] = $id_customer;
+            $payload['order_date'] = date('Y-m-d');
+            // dd($payload);
+            $order = $this->orderRepository->create($payload);
+            DB::commit();
+            return true;
+        }catch(\Exception $e){
+            DB::rollBack();
+            // Log::error($e->getMessage());
+            echo $e->getMessage(); die();
+            return false;
+        }
+    }
+
     public function destroy($id){
         DB::beginTransaction();
         try{
@@ -53,6 +72,7 @@ class OrderService implements OrderServiceInterface
             'id_customer',
             'tour_id',
             'order_date',
+            'quantity',
         ];
     }
 

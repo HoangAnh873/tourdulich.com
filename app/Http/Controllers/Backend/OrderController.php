@@ -6,23 +6,19 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Services\Interfaces\OrderServiceInterface as OrderService;
-use App\Repositories\Interfaces\ProvinceRepositoryInterface as ProvinceRepository;
 use App\Repositories\Interfaces\OrderRepositoryInterface as OrderRepository;
 use Mail;
 
 class OrderController extends Controller
 {
     protected $orderService;
-    protected $provinceRepository;
     protected $orderRepository;
  
     public function __construct(
         OrderService $orderService,
-        ProvinceRepository $provinceRepository,
         OrderRepository $orderRepository,
     ){
        $this->orderService = $orderService;
-       $this->provinceRepository = $provinceRepository;
        $this->orderRepository = $orderRepository;
     }
 
@@ -38,10 +34,35 @@ class OrderController extends Controller
         ));
     }
 
+    public function store(Request $request, $tour_id, $id_customer){
+
+        $quantity = $request->quantity;
+        
+        if( $quantity == NULL)
+        {
+            return redirect()->back()->with('error','Bạn chưa nhập đủ thông tin!');
+        }
+        if( $quantity <= 0 )
+        {
+            return redirect()->back()->with('error','Vui lòng nhập số lượng lớn hơn 0!');
+        }
+        if( $quantity > 99 )
+        {
+            return redirect()->back()->with('error','Vui lòng nhập số lượng nhỏ hơn 100!');
+        }
+        if($this->orderService->create($request, $tour_id, $id_customer)){
+            return redirect()->route('home.index')->with('success','Đơn đặt tour của bạn đã 
+            được gửi đi vui lòng chờ phản hồi');
+        }
+        return redirect()->route('home.service')->with('error','Đơn đặt tour của bạn đã 
+        không được gửi đi, vui lòng xem lại!');
+    }
+
     public function accept($id){
+        
         $order = $this->orderRepository->findById($id);
         $customerName = $order->customers->name;
-        $price = $order->tours->price;
+        $price = $order->tours->price * $order->quantity;
         // $customerEmail = $order->customers->email; 
         // dd($price);
         Mail::send('backend.email.order_successful', compact('customerName', 'price'), function ($email) use ($customerName) {
@@ -66,21 +87,18 @@ class OrderController extends Controller
     }
 
     public function destroy($id){
-        
-        if($this->orderService->destroy($id)){
+
             $order = $this->orderRepository->findById($id);
             $customerName = $order->customers->name;
             // $customerEmail = $order->customers->email; 
-            // dd($price);
+            // dd($customerEmail);
             Mail::send('backend.email.order_failed', compact('customerName'), function ($email) use ($customerName) {
                 $email->subject('ĐẶT TOUR THẤT BẠI');
                 $email->to('hoanganhh080703@gmail.com', $customerName);
             });
+            $this->orderService->destroy($id);
             return redirect()->route('order.index')->with('success','Hủy đơn 
             đặt tour thành công');
-        }
-        return redirect()->route('order.index')->with('error','Hủy đơn 
-        đặt tour không thành công');
     }
 
 }

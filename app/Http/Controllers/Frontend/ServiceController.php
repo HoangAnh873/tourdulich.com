@@ -6,8 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Tour;
 
-// use App\Services\Interfaces\ServiceServiceInterface as ServiceService;
-// use App\Repositories\Interfaces\ServiceRepositoryInterface as ServiceRepository;
+use App\Repositories\Interfaces\TourRepositoryInterface as TourRepository;
 
 use App\Http\Requests\StoreServiceRequest;
 
@@ -15,18 +14,15 @@ use Illuminate\Support\Facades\Auth;
 
 class ServiceController extends Controller
 {
-    // protected $bookingService;
-    // protected $bookingRepository;
+    protected $tourRepository;
     public function __construct(
-        // BookingService $bookingService,
-        // BookingRepository $bookingRepository,
+        TourRepository $tourRepository,
     ){
-    //    $this->bookingService = $bookingService;
-    //    $this->bookingRepository = $bookingRepository;
+        $this->tourRepository = $tourRepository;
     }
 
+
     public function index(Request $request){
-        // $service = $this->serviceRepository->findById($id);
         $tours = Tour::all(); 
         $config = $this->config();
         $config['seo'] = config('apps.service');
@@ -36,7 +32,18 @@ class ServiceController extends Controller
         ));
     }
 
+    public function order($id){
+        $tour = $this->tourRepository->findById($id);
+        $customer = Auth::guard('customer')->user();
+        if ($customer) {
+            return redirect()->route('booking.order', [
+                'tour' => $tour,
+                'customer' => $customer,
+            ]);
+        }
     
+        return back()->with('error', 'Bạn phải đăng nhập tài khoản');
+    }
 
     private function config(){
         return [

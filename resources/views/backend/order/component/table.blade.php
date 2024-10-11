@@ -3,6 +3,7 @@
         <tr>
             <th>Tên khách</th>
             <th>Email</th>
+            <th>số lượng</th>
             <th>Tên tour</th>
             <th>Ngày đặt</th>
             <th>Ngày bắt đầu</th>
@@ -19,6 +20,9 @@
                 </td>
                 <td>
                     {{ $order->customers->email }}
+                </td>
+                <td>
+                    {{ $order->quantity }}
                 </td>
                 <td>
                     {{ $order->tours->name }}
