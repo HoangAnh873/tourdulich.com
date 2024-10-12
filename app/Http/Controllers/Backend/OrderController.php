@@ -9,6 +9,8 @@ use App\Services\Interfaces\OrderServiceInterface as OrderService;
 use App\Repositories\Interfaces\OrderRepositoryInterface as OrderRepository;
 use Mail;
 
+use Illuminate\Support\Facades\Auth;
+
 class OrderController extends Controller
 {
     protected $orderService;
@@ -46,9 +48,9 @@ class OrderController extends Controller
         {
             return redirect()->back()->with('error','Vui lòng nhập số lượng lớn hơn 0!');
         }
-        if( $quantity > 99 )
+        if( $quantity > 30 )
         {
-            return redirect()->back()->with('error','Vui lòng nhập số lượng nhỏ hơn 100!');
+            return redirect()->back()->with('error','Vui lòng nhập số lượng nhỏ hơn 30!');
         }
         if($this->orderService->create($request, $tour_id, $id_customer)){
             return redirect()->route('home.index')->with('success','Đơn đặt tour của bạn đã 
@@ -56,6 +58,34 @@ class OrderController extends Controller
         }
         return redirect()->route('home.service')->with('error','Đơn đặt tour của bạn đã 
         không được gửi đi, vui lòng xem lại!');
+    }
+
+    public function booking(Request $request){
+        $customer = Auth::guard('customer')->user();
+        if ($customer) {
+            $quantity = $request->quantity;
+            $tour_id = $request->tour_name;
+            $id_customer = $customer->id;
+            if( $quantity == NULL)
+            {
+                return redirect()->back()->with('error','Bạn chưa nhập đủ thông tin!');
+            }
+            if( $quantity <= 0 )
+            {
+                return redirect()->back()->with('error','Vui lòng nhập số lượng lớn hơn 0!');
+            }
+            if( $quantity > 30 )
+            {
+                return redirect()->back()->with('error','Vui lòng nhập số lượng nhỏ hơn 30!');
+            }
+            if($this->orderService->create($request, $tour_id, $id_customer)){
+                return redirect()->route('home.index')->with('success','Đơn đặt tour của bạn đã 
+                được gửi đi vui lòng chờ phản hồi');
+            }
+            return redirect()->route('home.booking')->with('error','Đơn đặt tour của bạn đã 
+            không được gửi đi, vui lòng xem lại!');
+        }
+        return redirect()->back()->with('error','Bạn phải đăng nhập trước!');
     }
 
     public function accept($id){

@@ -28,12 +28,26 @@ class BookingController extends Controller
     //    $this->bookingRepository = $bookingRepository;
     }
 
-    public function index(){
+    public function index(Request $request){
+        // $tourId = $request->query('tour');
+        // $tour = Tour::find($tourId);
+        // $customerId =  $request->query('customer');
+        // $customer = Customer::find($customerId);
+        // dd($customer);
+        $tours = Tour::all();
         $config = $this->config();
-        $config['seo'] = config('apps.booking');
         return view('frontend.booking.booking', compact(
             'config',
+            'tours',
+            // 'tour',
+            // 'customer',
         ));
+    }
+
+    public function show($id)
+    {
+        $tour = Tour::findOrFail($id);
+        return response()->json($tour);
     }
 
     public function order(Request $request){

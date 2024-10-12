@@ -109,7 +109,7 @@ return [
 
     'from' => [
         'address' => 'hoanganhh080703@gmail.com',
-        'name' => 'Demo TripGood',
+        'name' => 'Goodtrip',
     ],
 
     /*

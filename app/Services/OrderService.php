@@ -36,7 +36,7 @@ class OrderService implements OrderServiceInterface
     public function create($request, $tour_id, $id_customer){
         DB::beginTransaction();
         try{
-            $payload = $request->except(['_token','send','name','start_date','end_date']);
+            $payload = $request->except(['_token','send','name','start_date','end_date','tour_name']);
             $payload['tour_id'] = $tour_id;
             $payload['id_customer'] = $id_customer;
             $payload['order_date'] = date('Y-m-d');

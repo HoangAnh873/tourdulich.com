@@ -78,6 +78,17 @@
   text-transform: none;
   text-align: center;
 }
+
+#booking form .inputBox select {
+  width: 50rem;
+  padding: 1rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  font-size: 1.7rem;
+  color: #333;
+  text-transform: none;
+  text-align: center;
+}
+
 #booking form .inputBox h3 {
   font-size: 2rem;
   padding: 1rem 0;

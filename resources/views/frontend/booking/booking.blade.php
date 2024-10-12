@@ -18,10 +18,33 @@
     <link rel="stylesheet" href="/frontend/css/bookingside.css" />
     <link rel="stylesheet" href="/frontend/css/blog.css" />
     <link rel="stylesheet" href="/frontend/css/footerside.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>| GoodTrip Việt Nam</title>
   </head>
   <body>
-    
+
+    {{-- bắt sự kiện khi chọn tour thì sẽ hiển thị giá trị ngày bd và ngày kt của tour đó --}}
+    <script>
+        $(document).ready(function() {
+            $('#tourSelect').change(function() {
+                const tourId = $(this).val();
+                if (tourId) {
+                    $.ajax({
+                        url: '/home/booking/tour/' + tourId, // Thay thế bằng URL đúng
+                        method: 'GET',
+                        success: function(response) {
+                            $('#start_date').val(response.start_date);
+                            $('#end_date').val(response.end_date);
+                        },
+                        error: function(error) {
+                            console.error('Lỗi khi lấy thông tin tour:', error);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
     <div id="main">
       @include('frontend.component.header')
       <!-- ============================== -->
@@ -45,30 +68,33 @@
         </div>
         <div class="container-booking">
           <img src="/frontend/img/bookimg.png" alt="" />
-          <form action="">
-            <div class="inputBox">
-              <h3>Bạn muốn đi đâu?</h3>
-              <input type="text" placeholder="chọn một địa điểm" />
-            </div>
-            <div class="inputBox">
-              <h3>Có bao nhiêu người cùng tham gia?</h3>
-              <input type="number" placeholder="số người tham gia du lịch" />
-            </div>
-            <div class="inputBox">
-              <h3>Ngày bắt đầu chuyến đi?</h3>
-              <input type="date" />
-            </div>
-            <div class="inputBox">
-              <h3>Ngày kết thúc chuyến đi?</h3>
-              <input type="date" />
-            </div>
-            <input
-              type="button"
-              onclick="alert('Bạn đã hãy nạp lần đầu để được sử dụng dịch vụ')"
-              class="btn"
-              value="Đặt ngay"
-            />
+
+            <form action="{{ route('customer.booking') }}" method="post" >
+              @csrf
+              <div class="inputBox">
+                  <h3>Bạn muốn đi đâu?</h3>
+                  <select name="tour_name" id="tourSelect">
+                      <option value="">Chọn tour</option>
+                      @foreach($tours as $tour)
+                          <option value="{{ $tour->id }}">{{ $tour->name }}</option>
+                      @endforeach
+                  </select>
+              </div>
+              <div class="inputBox">
+                  <h3>Có bao nhiêu người cùng tham gia?</h3>
+                  <input type="number" name="quantity" placeholder="số người tham gia du lịch" />
+              </div>
+              <div class="inputBox">
+                  <h3>Ngày bắt đầu chuyến đi?</h3>
+                  <input type="date" id="start_date" name="start_date" disabled >
+              </div>
+              <div class="inputBox">
+                  <h3>Ngày kết thúc chuyến đi?</h3>
+                  <input type="date" id="end_date" name="end_date" disabled >
+              </div>
+              <input type="submit" class="btn" value="Đặt ngay"/>
           </form>
+
         </div>
       </div>
       <!-- End Booking -->

@@ -18,6 +18,7 @@ use App\Http\Controllers\Frontend\BookingController;
 use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\HelpController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,8 +50,10 @@ Route::get('/logout/index', [CustomerController::class, 'logout'])->name('logout
 
 /* BOOKING */
 Route::get('/home/booking', [BookingController::class, 'index'])->name('home.booking');
+Route::get('/home/booking/tour/{id}', [BookingController::class, 'show']);
 Route::get('/home/booking/order', [BookingController::class, 'order'])->name('booking.order');
 
+/* SERVICE */
 Route::get('/home/service', [ServiceController::class, 'index'])->name('home.service');
 Route::get('/home/service/{id}/order', [ServiceController::class, 'order'])->where(['id' => '[0-9]+'])
 ->name('service.order');
@@ -113,7 +116,9 @@ Route::group(['prefix' => 'order'], function(){
     Route::get('index', [OrderController::class, 'index'])
     ->name('order.index')->middleware('admin');
     Route::post('tour/{tour_id}/customer/{customer_id}', [OrderController::class, 'store'])
-    ->name('customer.order');
+    ->name('customer.order'); //frontend
+    Route::post('/customer/booking', [OrderController::class, 'booking'])
+    ->name('customer.booking'); //frontend
     Route::get('{id}/accept', [OrderController::class, 'accept'])->where(['id' => '[0-9]+'])
     ->name('order.accept')->middleware('admin');
     Route::get('{id}/delete', [OrderController::class, 'delete'])->where(['id' => '[0-9]+'])
