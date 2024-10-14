@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Services\Interfaces\OrderServiceInterface as OrderService;
+use App\Services\Interfaces\BillServiceInterface as BillService;
 use App\Repositories\Interfaces\OrderRepositoryInterface as OrderRepository;
 use Mail;
 
@@ -14,13 +15,16 @@ use Illuminate\Support\Facades\Auth;
 class OrderController extends Controller
 {
     protected $orderService;
+    protected $billService;
     protected $orderRepository;
  
     public function __construct(
         OrderService $orderService,
+        BillService $billService,
         OrderRepository $orderRepository,
     ){
        $this->orderService = $orderService;
+       $this->billService = $billService;
        $this->orderRepository = $orderRepository;
     }
 
@@ -88,8 +92,8 @@ class OrderController extends Controller
         return redirect()->back()->with('error','Bạn phải đăng nhập trước!');
     }
 
-    public function accept($id){
-        
+    public function accept(Request $request, $id){
+
         $order = $this->orderRepository->findById($id);
         $customerName = $order->customers->name;
         $price = $order->tours->price * $order->quantity;
@@ -99,6 +103,7 @@ class OrderController extends Controller
             $email->subject('ĐẶT TOUR THÀNH CÔNG');
             $email->to('hoanganhh080703@gmail.com', $customerName);
         });
+        $this->billService->create($order->tour_id, $order->id_customer, $price );
         $this->orderService->destroy($id);
         return redirect()->route('order.index')->with('success','Duyệt đơn 
         đặt tour thành công');

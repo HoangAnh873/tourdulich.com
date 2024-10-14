@@ -31,7 +31,6 @@
                     <input type="checkbox" value="{{ $user->publish }}" class="js-switch
                     status" data-field="publish" data-model="User" {{  ($user->publish == 
                     2) ? 'checked' : ''}} data-modelId="{{ $user->id }}"  />
-                    
                 </td>
                 <td class="text-center">  
                     <a href="{{ route('user.edit', $user->id) }}" class="btn btn-success"><i class="fa fa-edit"></i></a>

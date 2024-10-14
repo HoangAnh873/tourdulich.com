@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 
+use App\Models\Customer;
+use App\Models\Tour;
+
 /**
  * Class BillService
  * @package App\Services
@@ -33,6 +36,41 @@ class BillService implements BillServiceInterface
         return $bills;
     }
 
+    public function create( $tour_id, $id_customer, $price){
+        DB::beginTransaction();
+        try{
+            $payload['customer_name'] = Customer::find($id_customer)->name;
+            $payload['email'] = Customer::find($id_customer)->email;
+            $payload['tour_name'] = Tour::find($tour_id)->name;
+            $payload['price'] = $price;
+            $payload['invoice_date'] = date('Y-m-d');
+            $bill = $this->billRepository->create($payload);
+            DB::commit();
+            return true;
+        }catch(\Exception $e){
+            DB::rollBack();
+            // Log::error($e->getMessage());
+            echo $e->getMessage(); die();
+            return false;
+        }
+    }
+
+    public function updateStatus($post = []){
+        DB::beginTransaction();
+        try{
+            $payload[$post['field']] = (($post['value'] == 1)?2:1);
+            $bill = $this->billRepository->update($post['modelId'], $payload);
+            
+            DB::commit();
+            return true;
+        }catch(\Exception $e ){
+            DB::rollBack();
+            // Log::error($e->getMessage());
+            echo $e->getMessage();die();
+            return false;
+        }
+    }
+
     private function paginateSelect(){
         return [
             'id',
@@ -41,6 +79,7 @@ class BillService implements BillServiceInterface
             'tour_name',
             'price',
             'invoice_date',
+            'publish'
         ];
     }
 

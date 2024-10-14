@@ -10,6 +10,12 @@ class Bill extends Model
     use HasFactory;
 
     protected $fillable = [
+        'customer_name',
+        'email',
+        'tour_name',
+        'price',
+        'invoice_date',
+        'publish',
     ];
 
     
