@@ -62,10 +62,10 @@
                   </h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -83,10 +83,10 @@
                   </h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -103,14 +103,14 @@
               <div class="blog-content">
                 <a href="">
                   <h4 class="">
-                    Cất túi ngay cuốn cẩm nang du lịch Vũng Tàu 2022
+                    Cất túi ngay cuốn cẩm nang du lịch Vũng Tàu 2024
                   </h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -134,10 +134,10 @@
                   </h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -155,10 +155,10 @@
                   </h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -176,10 +176,10 @@
                   </h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -203,10 +203,10 @@
                   </h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -222,10 +222,10 @@
                   <h4 class="">Miền quê đưa khách 'du hành' về quá khứ</h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -241,10 +241,10 @@
                   <h4 class="">Mai anh đào nở rộ tại Sapa</h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -266,10 +266,10 @@
                   <h4 class="">Tuyết rơi trên đỉnh Fansipan</h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -287,10 +287,10 @@
                   </h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -308,10 +308,10 @@
                   </h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -333,10 +333,10 @@
                   <h4 class="">4 cây cầu có thiết kế đặc biệt của Đà Nẵng</h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -352,10 +352,10 @@
                   <h4 class="">Vũng Tàu hoãn 2 sự kiện lớn vì Covid-19</h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -371,10 +371,10 @@
                   <h4 class="">5 thức bánh sắc màu của người miền Tây</h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -396,10 +396,10 @@
                   <h4 class="">Đà Nẵng trong sương mây</h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -413,14 +413,14 @@
               <div class="blog-content">
                 <a href="">
                   <h4 class="">
-                    5 cung leo núi miền Bắc cho ngày đầu năm 2022
+                    5 cung leo núi miền Bắc cho ngày đầu năm 2024
                   </h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -436,10 +436,10 @@
                   <h4 class="">Chợ nổi qua lăng kính của du khách Tây</h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>

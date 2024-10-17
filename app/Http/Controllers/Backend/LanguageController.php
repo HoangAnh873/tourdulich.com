@@ -32,7 +32,8 @@ class LanguageController extends Controller
         $config = [
             'js' => [
                 'backend/js/plugins/switchery/switchery.js',
-                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js'
+                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
+                'backend/js/inspinia.js',
             ],
             'css' => [
                 'backend/css/plugins/switchery/switchery.css',
@@ -148,6 +149,7 @@ class LanguageController extends Controller
                 'backend/library/finder.js',
                 'backend/library/seo.js',
                 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js'
+                
             ],
             'css' => [
                 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css'

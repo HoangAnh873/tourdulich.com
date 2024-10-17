@@ -23,6 +23,7 @@ class BillController extends Controller
     public function index(Request $request){
 
         $bills = $this->billService->paginate($request);
+        
         $config = $this->config();
         $config['seo'] = config('apps.bill');
         $template = 'backend.bill.index';
@@ -43,6 +44,8 @@ class BillController extends Controller
                 'backend/js/plugins/switchery/switchery.js',
                 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
                 'backend/library/location.js',
+                'backend/library/finder.js',
+                'backend/js/inspinia.js',
             ]
         ];
 

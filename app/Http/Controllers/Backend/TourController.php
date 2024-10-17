@@ -32,17 +32,7 @@ class TourController extends Controller
 
         $tours = $this->tourService->paginate($request);
         
-
-        $config = [
-            'js' => [
-                'backend/js/plugins/switchery/switchery.js',
-                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js'
-            ],
-            'css' => [
-                'backend/css/plugins/switchery/switchery.css',
-                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css'
-            ]
-        ];
+        $config = $this->config();
         $config['seo'] = config('apps.tour');
         $template = 'backend.tour.index';
         return view('backend.dashboard.layout', compact(
@@ -121,13 +111,16 @@ class TourController extends Controller
     private function config(){
         return [
             'css' => [
-                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css'
+                'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css',
+                'backend/css/plugins/switchery/switchery.css',
             ],
             'js' => [
                 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
+                'backend/js/plugins/switchery/switchery.js',
                 'backend/library/location.js',
                 'backend/plugins/ckfinder_2/ckfinder.js',
                 'backend/library/finder.js',
+                'backend/js/inspinia.js',
             ]
         ];
 

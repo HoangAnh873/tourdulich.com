@@ -33,9 +33,9 @@ class BillRepository extends BaseRepository implements BillRepositoryInterface
                       ->orWhere('email', 'LIKE', '%'.$condition['keyword'].'%') 
                       ->orWhere('tour_name', 'LIKE', '%'.$condition['keyword'].'%');
             }
-            // if(isset($condition['publish']) && $condition['publish'] != 0){
-            //     $query->where('publish', '=', $condition['publish']);
-            // }
+            if(isset($condition['publish']) && $condition['publish'] != 0){
+                $query->where('publish', '=', $condition['publish']);
+            }
             return $query;
         });
         if(!empty($join)){

@@ -139,7 +139,6 @@
         $('#checkAll').prop('checked', allChecked);
     }
 
-    
 
 	$(document).ready(function(){
         HT.switchery();

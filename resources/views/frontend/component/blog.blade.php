@@ -38,10 +38,10 @@
                   </h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -59,10 +59,10 @@
                   </h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>
@@ -79,14 +79,14 @@
               <div class="blog-content">
                 <a href="">
                   <h4 class="">
-                    Cất túi ngay cuốn cẩm nang du lịch Vũng Tàu 2022
+                    Cất túi ngay cuốn cẩm nang du lịch Vũng Tàu 2024
                   </h4>
                 </a>
                 <div class="blog-detail">
-                  <div class="info">By: Pham Gia Hào</div>
+                  <div class="info">By: Đặng Hoàng Anh</div>
                   <div class="info2">
                     <div class="date">
-                      <i class="fas fa-clock"></i>20/1/2022
+                      <i class="fas fa-clock"></i>20/1/2024
                     </div>
                     <div class="view"><i class="fas fa-eye"></i>999 view</div>
                   </div>

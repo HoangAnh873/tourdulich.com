@@ -29,6 +29,7 @@ class BillService implements BillServiceInterface
 
     public function paginate($request){
         $condition['keyword'] = addslashes($request->input('keyword'));
+        $condition['publish'] = $request->integer('publish'); 
         $perPage = $request->integer('perpage');
         $bills = $this->billRepository->pagination(
             $this->paginateSelect(), $condition,

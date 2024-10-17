@@ -3,52 +3,50 @@
         <div class="col-lg-3">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <span class="label label-success pull-right">Monthly</span>
-                    <h5>Income</h5>
+                    <span class="label label-success pull-right">tháng 10</span>
+                    <h5>ĐƠN ĐƯỢC DUYỆT</h5>
                 </div>
                 <div class="ibox-content">
-                    <h1 class="no-margins">40 886,200</h1>
+                    <h1 class="no-margins">299</h1>
                     <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
-                    <small>Total income</small>
+                    <small>Tăng trưởng </small>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <span class="label label-info pull-right">Annual</span>
+                    <span class="label label-info pull-right">Tổng số đơn</span>
                     <h5>Orders</h5>
                 </div>
                 <div class="ibox-content">
-                    <h1 class="no-margins">275,800</h1>
-                    <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
-                    <small>New orders</small>
+                    <h1 class="no-margins">312</h1>
+                    <div class="stat-percent font-bold text-danger">10% <i class="fa fa-level-down"></i></div>
+                    <small>Số đơn bị hủy chiếm</small>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <span class="label label-primary pull-right">Today</span>
-                    <h5>visits</h5>
+                    <span class="label label-primary pull-right">Total</span>
+                    <h5>TỔNG DOANH THU</h5>
                 </div>
                 <div class="ibox-content">
-                    <h1 class="no-margins">106,120</h1>
-                    <div class="stat-percent font-bold text-navy">44% <i class="fa fa-level-up"></i></div>
-                    <small>New visits</small>
+                    <h1 class="no-margins">109.069.000Đ</h1>
+                    <small>Tổng doanh thu</small>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <span class="label label-danger pull-right">Low value</span>
-                    <h5>User activity</h5>
+                    <span class="label label-danger pull-right">Customer</span>
+                    <h5>TỔNG SỐ KHÁCH</h5>
                 </div>
                 <div class="ibox-content">
-                    <h1 class="no-margins">80,600</h1>
-                    <div class="stat-percent font-bold text-danger">38% <i class="fa fa-level-down"></i></div>
-                    <small>In first month</small>
+                    <h1 class="no-margins">20</h1>
+                    <small>Tổng số khách</small>
                 </div>
             </div>
         </div>

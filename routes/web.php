@@ -105,11 +105,6 @@ Route::group(['prefix' => 'tour'], function(){
     ->name('tour.destroy')->middleware('admin');
 });
 
-/* BILL */
-Route::group(['prefix' => 'bill'], function(){
-    Route::get('index', [BillController::class, 'index'])->name
-    ('bill.index')->middleware('admin');
-});
 
 /* ORDER */
 Route::group(['prefix' => 'order'], function(){
@@ -126,6 +121,14 @@ Route::group(['prefix' => 'order'], function(){
     Route::delete('{id}/destroy', [OrderController::class, 'destroy'])->where(['id' => '[0-9]+'])
     ->name('order.destroy')->middleware('admin');
 });
+
+/* BILL */
+Route::group(['prefix' => 'bill'], function(){
+    Route::get('index', [BillController::class, 'index'])->name
+    ('bill.index')->middleware('admin');
+});
+
+
 
 
 

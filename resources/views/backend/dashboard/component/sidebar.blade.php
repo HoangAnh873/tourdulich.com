@@ -23,6 +23,7 @@
                     IN+
                 </div>
             </li>
+
             @foreach(config('apps.module.module') as $key => $val)
             <li class="{{ (in_array($segment, $val['name'])) ? 'active' : '' }}">
                 <a href="#"><i class="{{ $val['icon'] }}"></i> 
@@ -38,6 +39,7 @@
                 @endif
             </li>
             @endforeach
+
         </ul>
 
     </div>

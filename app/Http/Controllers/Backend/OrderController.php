@@ -31,6 +31,7 @@ class OrderController extends Controller
     public function index(Request $request){
 
         $orders = $this->orderService->paginate($request);
+        $config = $this->config();
         $config['seo'] = config('apps.order');
         $template = 'backend.order.index';
         return view('backend.dashboard.layout', compact(
@@ -134,6 +135,15 @@ class OrderController extends Controller
             $this->orderService->destroy($id);
             return redirect()->route('order.index')->with('success','Hủy đơn 
             đặt tour thành công');
+    }
+
+    private function config(){
+        return [
+            
+            'js' => [
+                'backend/js/inspinia.js',
+            ]
+        ];
     }
 
 }
