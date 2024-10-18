@@ -4,6 +4,14 @@
     return [
         'module' => [
             [
+                'title' => 'Dashboard',
+                'icon' => 'fa fa-database',
+                'name' => ['dashboard'],
+                'route' => 'dashboard/index',
+                'class' => 'special'
+
+            ],
+            [
                 'title' => 'Quản lí Thành Viên',
                 'icon' => 'fa fa-user',
                 'name' => ['user'],

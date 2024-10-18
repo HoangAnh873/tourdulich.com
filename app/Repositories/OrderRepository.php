@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\Order;
 use App\Repositories\Interfaces\OrderRepositoryInterface;
 use App\Repositories\BaseRepository;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class OrderService
@@ -43,9 +44,8 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
                     ->withQueryString()
                     ->withPath(env('APP_URL').$extend['path']);
     } 
+    public function getTotalOrders(){
+        return $this->model->count();
+    } 
 
-    // public function accept(int $id = 0){
-    //     $model = $this->model->create($payload);
-    //     return $this->findById($id)->delete();
-    // }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Helpers\BillHelper;
 use App\Services\Interfaces\BillServiceInterface;
 use App\Repositories\Interfaces\BillRepositoryInterface as BillRepository;
 use Illuminate\Support\Facades\DB;
@@ -70,6 +71,30 @@ class BillService implements BillServiceInterface
             echo $e->getMessage();die();
             return false;
         }
+    }
+
+    public function billStatistic(){
+        $month = now()->month;
+        $year = now()->year;
+        $previousMonth = ($month == 1) ? 12 : $month -1;
+        $previousYear = ($month == 1) ? $year - 1 : $year;
+
+        $billCurrentMonth = $this->billRepository->getBillByTime($month, $year ); // lấy số lượng bill của tháng hiện tại
+        $billPreviousMonth = $this->billRepository->getBillByTime( $previousMonth, $previousYear); // lấy số lượng bill tháng trước
+        $grow = BillHelper::growth($billCurrentMonth, $billPreviousMonth); // Tính % tăng trưởng
+        $growHtml = BillHelper::growHtml($grow); // Xử lí icon tăng trưởng, giảm.
+        $revenueBills = BillHelper::format_money($this->billRepository->revenueBills()); //định dạng tiền lại
+        $customerQuantity = $this->billRepository->customerQuantity(); //đếm số khách hàng đặt tour thông qua email
+
+        return [
+            'billCurrentMonth' => $billCurrentMonth,
+            'billPreviousMonth' => $billPreviousMonth,
+            'grow' => $grow,
+            'growHtml' => $growHtml,
+            'revenueBills' => $revenueBills,
+            'customerQuantity' => $customerQuantity,
+
+        ];
     }
 
     private function paginateSelect(){

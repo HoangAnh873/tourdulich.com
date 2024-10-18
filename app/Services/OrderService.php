@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+
 use App\Services\Interfaces\OrderServiceInterface;
 use App\Repositories\Interfaces\OrderRepositoryInterface as OrderRepository;
 use Illuminate\Support\Facades\DB;
@@ -64,6 +65,12 @@ class OrderService implements OrderServiceInterface
             echo $e->getMessage(); die();
             return false;
         }
+    }
+
+    public function orderStatistic(){
+        return [
+           'totalOrders' => $this->orderRepository->getTotalOrders()
+        ];
     }
 
     private function paginateSelect(){

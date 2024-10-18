@@ -14,7 +14,7 @@ class Order extends Model
         'tour_id',
         'id_customer',
         'order_date',
-        'quantity'
+        'quantity',
     ];
 
     

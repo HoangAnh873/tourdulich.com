@@ -4,22 +4,33 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Services\Interfaces\BillServiceInterface as BillService;
+use App\Services\Interfaces\OrderServiceInterface as OrderService;
 class DashboardController extends Controller
 {
-    public function __construct(){
-        
+    protected $billService;
+    protected $orderService;
+    protected $customerService;
+    public function __construct(
+        BillService $billService,
+        OrderService $orderService,
+    ){
+        $this->billService = $billService;
+        $this->orderService = $orderService;
     }
 
     public function index(){
 
-        
+        $billStatistic = $this->billService->billStatistic();
+        $orderStatistic = $this->orderService->orderStatistic();
 
         $config = $this->config();
         $template = 'backend.dashboard.home.index';
         return view('backend.dashboard.layout', compact(
             'template',
-            'config'
+            'config',
+            'billStatistic',
+            'orderStatistic',
         ));
     }
 
@@ -34,14 +45,7 @@ class DashboardController extends Controller
                 'backend/js/plugins/flot/jquery.flot.symbol.js',
                 'backend/js/plugins/flot/jquery.flot.time.js',
                 'backend/js/plugins/peity/jquery.peity.min.js',
-                'backend/js/demo/peity-demo.js',
-                'backend/js/inspinia.js',
-                'backend/js/plugins/pace/pace.min.js',
-                'backend/js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js',
-                'backend/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
-                'backend/js/plugins/easypiechart/jquery.easypiechart.js',
-                'backend/js/plugins/sparkline/jquery.sparkline.min.js',
-                'backend/js/demo/sparkline-demo.js'
+                'backend/js/inspinia.js'
             ]
         ];
     }

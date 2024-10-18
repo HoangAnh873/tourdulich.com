@@ -49,6 +49,7 @@ class CustomerService implements CustomerServiceInterface
             return false;
         }
     }
+    
     private function paginateSelect(){
         return [
             'id',

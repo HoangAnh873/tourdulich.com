@@ -47,4 +47,21 @@ class BillRepository extends BaseRepository implements BillRepositoryInterface
                     ->withPath(env('APP_URL').$extend['path']);
     } 
 
+    public function getBillByTime($month, $year){
+        return $this->model
+        ->whereMonth('created_at', $month)
+        ->whereYear('created_at', $year)
+        ->count();
+    } 
+
+    public function revenueBills(){
+        return $this->model
+        ->where('publish', 2)
+        ->sum('price');
+    }
+
+    public function customerQuantity(){
+        return $this->model->distinct('email')->count();
+    }
+
 }
