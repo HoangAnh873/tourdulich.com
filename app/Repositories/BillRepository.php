@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Bill;
+use Illuminate\Support\Facades\DB;
 use App\Repositories\Interfaces\BillRepositoryInterface;
 use App\Repositories\BaseRepository;
 
@@ -49,8 +50,8 @@ class BillRepository extends BaseRepository implements BillRepositoryInterface
 
     public function getBillByTime($month, $year){
         return $this->model
-        ->whereMonth('created_at', $month)
-        ->whereYear('created_at', $year)
+        ->whereMonth('invoice_date', $month)
+        ->whereYear('invoice_date', $year)
         ->count();
     } 
 
@@ -62,6 +63,31 @@ class BillRepository extends BaseRepository implements BillRepositoryInterface
 
     public function customerQuantity(){
         return $this->model->distinct('email')->count();
+    }
+
+    public function chartMonth()
+    {
+        $bills = Bill::select(
+            DB::raw('MONTH(invoice_date) as month'))
+            ->groupBy('month')->get();     
+        $labels = [];
+        foreach ($bills as $bill) {
+            $labels[] = 'Tháng ' . $bill->month;
+        }
+
+        return $labels;
+    }
+    public function chartValue()
+    {
+        $bills = Bill::select(
+            DB::raw('MONTH(invoice_date) as month'), 
+                     DB::raw('COUNT(*) as total'))->groupBy('month')->get();     
+        $data = [];
+        foreach ($bills as $bill) {
+            $data[] = $bill->total;
+        }
+
+        return $data;
     }
 
 }

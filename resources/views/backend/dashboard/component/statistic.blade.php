@@ -4,9 +4,10 @@
             <div class="ibox-title">
                 <span class="label label-success pull-right">Tháng {{  now()->month }}</span>
                 <h5>PHIẾU ĐÃ DUYỆT</h5>
+               
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">{{ $billStatistic['billCurrentMonth'] }}</h1>
+                <h2 class="no-margins">{{ $billStatistic['billCurrentMonth'] }}</h2>
                 {!! $billStatistic['growHtml'] !!}
                 <small>Tăng trưởng </small>
             </div>
@@ -19,8 +20,8 @@
                 <h5>PHIẾU ĐỢI DUYỆT</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">{{ $orderStatistic['totalOrders'] }}</h1>
-                {{-- <div class="stat-percent font-bold text-danger">10% <i class="fa fa-level-down"></i></div> --}}
+                <h2 class="no-margins">{{ $orderStatistic['totalOrders'] }}</h2>
+                {{-- <div class="stat-percent font-bold text-danger">20% <i class="fa fa-level-down"></i></div> --}}
                 <small>Số phiếu đợi duyệt</small>
             </div>
         </div>
@@ -32,7 +33,7 @@
                 <h5>TỔNG DOANH THU</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">{{ $billStatistic['revenueBills'] }}VNĐ</h1>
+                <h2 class="no-margins">{{ $billStatistic['revenueBills'] }}VNĐ</h2>
                 <small>Tổng doanh thu</small>  
             </div>
         </div>
@@ -44,7 +45,7 @@
                 <h5>TỔNG SỐ KHÁCH</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">{{ $billStatistic['customerQuantity'] }}</h1>
+                <h2 class="no-margins">{{ $billStatistic['customerQuantity'] }}</h2>
                 <small>Tổng số khách</small>
             </div>
         </div>

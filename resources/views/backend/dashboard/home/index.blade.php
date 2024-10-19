@@ -1,8 +1,6 @@
 <div class="wrapper wrapper-content">
     @include('backend.dashboard.component.statistic')
-    @include('backend.dashboard.component.chart')
-    
-
+    @include('backend.dashboard.component.chart' )
 
     <div class="row">
         <div class="col-lg-4">

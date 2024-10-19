@@ -23,6 +23,7 @@ class DashboardController extends Controller
 
         $billStatistic = $this->billService->billStatistic();
         $orderStatistic = $this->orderService->orderStatistic();
+        // dd($billStatistic);
 
         $config = $this->config();
         $template = 'backend.dashboard.home.index';
@@ -45,7 +46,8 @@ class DashboardController extends Controller
                 'backend/js/plugins/flot/jquery.flot.symbol.js',
                 'backend/js/plugins/flot/jquery.flot.time.js',
                 'backend/js/plugins/peity/jquery.peity.min.js',
-                'backend/js/inspinia.js'
+                'backend/js/inspinia.js',
+                'backend/js/plugins/chartJs/Chart.min.js',
             ]
         ];
     }

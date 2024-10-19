@@ -62,7 +62,6 @@ class BillService implements BillServiceInterface
         try{
             $payload[$post['field']] = (($post['value'] == 1)?2:1);
             $bill = $this->billRepository->update($post['modelId'], $payload);
-            
             DB::commit();
             return true;
         }catch(\Exception $e ){
@@ -85,6 +84,8 @@ class BillService implements BillServiceInterface
         $growHtml = BillHelper::growHtml($grow); // Xử lí icon tăng trưởng, giảm.
         $revenueBills = BillHelper::format_money($this->billRepository->revenueBills()); //định dạng tiền lại
         $customerQuantity = $this->billRepository->customerQuantity(); //đếm số khách hàng đặt tour thông qua email
+        $chartMonth = $this->billRepository->chartMonth();
+        $chartValue = $this->billRepository->chartValue();
 
         return [
             'billCurrentMonth' => $billCurrentMonth,
@@ -93,7 +94,8 @@ class BillService implements BillServiceInterface
             'growHtml' => $growHtml,
             'revenueBills' => $revenueBills,
             'customerQuantity' => $customerQuantity,
-
+            'chartMonth' =>  $chartMonth,
+            'chartValue' =>  $chartValue
         ];
     }
 
