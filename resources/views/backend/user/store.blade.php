@@ -72,7 +72,7 @@
                                 <div class="form-row">
                                     <label for="" class="control-label text-left">Nhóm thành viên
                                     <span class="text-danger">*</span></label>
-                                    <select name="user_catalogue_id" class="form-control setupSelect2">
+                                    <select name="user_catalogue_id" class="form-control">
                                         @foreach($userCatalogue as $key => $item)
                                         <option {{ $key == old('user_catalogue_id', (isset
                                         ($user->user_catalogue_id)) ? 

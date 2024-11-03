@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/frontend/css/blog.css" />
     <link rel="stylesheet" href="/frontend/css/footerside.css" />
     <link rel="stylesheet" href="/frontend/css/contact.css">
+    <link rel="stylesheet" href="/frontend/css/style.css" /> 
     <title>| GoodTrip Việt Nam</title>
   </head>
   <body>
@@ -35,7 +36,7 @@
               <h3 class="h3">CONTACT</h3>
               <li>Hotline: 0382787268</li>
               <li>IG: @goodtripvina</li>
-              <li>FB: <a href="https://www.facebook.com/GoodTrip-112627521317796">FB.COM/GoodTrip</a></li>
+              <li>FB: <a href="https://www.facebook.com/share/X5uzs13P6bxz7X36/">FB.COM/GoodTrip</a></li>
               <li>Chi nhánh I: 445 Sư Vạn Hạnh, P.12, Q.10, TP.HCM.</li>
               <li>Chi nhánh II: 48 Trần Quang Diệu, P.14, Q.3, TP.HCM.</li>
               <li>Chi nhánh III: 350 Điện Biên Phủ, P.17, Q. Bình Thạnh, TP.HCM.</li>

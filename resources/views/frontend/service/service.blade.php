@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/frontend/css/blog.css" />
     <link rel="stylesheet" href="/frontend/css/goidulich.css" />
     <link rel="stylesheet" href="/frontend/css/footer.css" />
+    <link rel="stylesheet" href="/frontend/css/style.css" /> 
     <title>| GoodTrip Việt Nam</title>
   </head>
   <body>
@@ -46,6 +47,14 @@
         </div>
       </div>
 
+      {{-- TÌM KIẾM --}}
+      <div class="search-bar">
+        <form action=" {{ route('service.search') }} " method="GET">
+          <input type="text" name="location" placeholder="Nhập địa điểm..." required autofocus>
+          <button type="submit"><i class="fas fa-search"></i> Tìm kiếm</button>
+        </form>
+      </div>
+
       <div class="packages">
         <div class="box-container">
           @foreach ($tours as $tour)
@@ -54,6 +63,7 @@
             <div class="content">
               <h3><i class="fas fa-map-marker-alt"></i> {{ $tour->name }}</h3>
               <p>{{ $tour->description }}</p>
+              <strong><p>Ngày khởi hành: {{ $tour->start_date }}</p></strong>
               <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>

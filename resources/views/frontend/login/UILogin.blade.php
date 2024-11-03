@@ -63,7 +63,7 @@
                 />
                 <div class="sub-login-mid">
                   <p><a href="{{ route('register.index') }}">Đăng kí</a></p>
-                  <p><a href="#">Quên mật khẩu?</a></p>
+                  <p><a>Quên mật khẩu?</a></p>
                 </div>
               </div>
               <div class="login-bot">
@@ -71,10 +71,11 @@
               </div>
               <div class="another-login">
                 <div class="mxh">
-                  <a href="" class="primary-btn"
+                  {{-- khi nào chỉnh điều hướng thêm href --}}
+                  <a class="primary-btn"
                     ><i class="fab fa-facebook-square" aria-hidden="true"></i
                   ></a>
-                  <a href="" class="primary-btn"><i class="fab fa-google"></i></a>
+                  <a class="primary-btn"><i class="fab fa-google"></i></a>
                 </div>
               </div>
             </div>

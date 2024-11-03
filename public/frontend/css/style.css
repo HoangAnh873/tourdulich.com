@@ -1,0 +1,73 @@
+
+.error-message{
+    color:red;
+    font-size:14px;
+    margin-top:5px;
+    font-style:italic;
+    text-align: left;
+}
+
+.search-bar {
+  text-align: center; /* Căn giữa nội dung bên trong */
+  margin: 20px auto; /* Tạo khoảng cách xung quanh ô tìm kiếm */
+}
+
+.search-bar form {
+  display: inline-block; /* Hiển thị form như một khối inline */
+}
+
+.search-bar input[type="text"] {
+  width: 400px; /* Điều chỉnh chiều rộng ô nhập liệu */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #4CAF50;  /* Màu xanh lá cây */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+.box {
+    border: 2px solid #cccccc; 
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.box:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+}
+
+.active {
+  background-color: #4CAF50;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* đoạn này css cho select2 của booking */
+.select2-container {
+  width: 100%; 
+  font-size: 1.7rem; 
+}
+
+.select2-selection__rendered {
+  line-height: 30px; 
+  /* padding: 1rem; */
+}
+
+.select2-selection__arrow {
+  height: 30px;
+}
+
+.select2-dropdown {
+  font-size: 14px;
+}

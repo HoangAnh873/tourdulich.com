@@ -21,7 +21,7 @@
         <!-- END HEADER OF BLOG -->
         <div class="container-blog center">
           <div class="container-header">
-            <a href="blog.html" class="btn-more">Xem tất cả >></a>
+            <a href="{{ route('home.blog') }}" class="btn-more">Xem tất cả >></a>
           </div>
           <div class="container-news">
             <div class="product-blog">

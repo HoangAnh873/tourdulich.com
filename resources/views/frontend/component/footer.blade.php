@@ -33,13 +33,13 @@
           <h5 class="t-black">GIỮ LIÊN LẠC VỚI CHÚNG TÔI</h5>
           <span class="line gold"></span>
           <div class="mxh">
-            <a href="" class="primary-btn"
+            <a class="primary-btn"
               ><i class="fab fa-facebook-square" aria-hidden="true"></i
             ></a>
-            <a href="" class="primary-btn"
+            <a class="primary-btn"
               ><i class="fab fa-instagram" aria-hidden="true"></i
             ></a>
-            <a href="" class="primary-btn"
+            <a class="primary-btn"
               ><i class="fab fa-twitter" aria-hidden="true"></i
             ></a>
           </div>

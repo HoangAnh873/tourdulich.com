@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="frontend/css/booking.css" />
     <link rel="stylesheet" href="frontend/css/blog.css" />
     <link rel="stylesheet" href="frontend/css/footer.css" />
-    {{-- <link rel="stylesheet" href="{{ asset('frontend/style.css') }}" />  --}}
+    <link rel="stylesheet" href="/frontend/css/style.css" /> 
     {{-- <script src="{{ asset('frontend/library/js/jquery.js') }}"></script> --}}
     <title>| GoodTrip Việt Nam</title>
 </head>

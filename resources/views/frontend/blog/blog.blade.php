@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/frontend/css/content.css" />
     <link rel="stylesheet" href="/frontend/css/blogside.css" />
     <link rel="stylesheet" href="/frontend/css/footerside.css" />
+    <link rel="stylesheet" href="/frontend/css/style.css" /> 
     <title>| GoodTrip Việt Nam</title>
   </head>
   <body>

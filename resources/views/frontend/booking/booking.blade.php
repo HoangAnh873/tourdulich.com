@@ -18,7 +18,10 @@
     <link rel="stylesheet" href="/frontend/css/bookingside.css" />
     <link rel="stylesheet" href="/frontend/css/blog.css" />
     <link rel="stylesheet" href="/frontend/css/footerside.css" />
+    <link rel="stylesheet" href="/frontend/css/style.css" /> 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <title>| GoodTrip Việt Nam</title>
   </head>
   <body>
@@ -43,6 +46,21 @@
                 }
             });
         });
+    </script>
+
+     {{-- đoạn này xử lí select2 --}}
+     <script>
+      $(document).ready(function() {
+          $('#tourSelect').select2({
+              tags: true,
+              createTag: function (params) {
+                  return {
+                      id: params.term,
+                      text: params.term
+                  }
+              }
+          });
+      });
     </script>
 
     <div id="main">

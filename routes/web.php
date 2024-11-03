@@ -55,6 +55,7 @@ Route::get('/home/booking/order', [BookingController::class, 'order'])->name('bo
 
 /* SERVICE */
 Route::get('/home/service', [ServiceController::class, 'index'])->name('home.service');
+Route::get('/home/service/search', [ServiceController::class, 'search'])->name('service.search');
 Route::get('/home/service/{id}/order', [ServiceController::class, 'order'])->where(['id' => '[0-9]+'])
 ->name('service.order');
 
