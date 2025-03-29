@@ -68,10 +68,6 @@ php artisan migrate --seed
 
 php artisan serve
 
-6. Chạy frontend (nếu có dùng Vue/React)
-
-npm run dev
-
 Liên Hệ
 
 Nếu có bất kỳ câu hỏi hoặc vấn đề nào, vui lòng liên hệ qua email: [hoanganhh080703@gmail.com].
