@@ -59,6 +59,7 @@ Copy file .env.example thành .env
 
 Chỉnh sửa thông tin kết nối database trong .env
 tạo APP_KEY bằng lệnh: php artisan key:generate  
+
 4. Tạo cơ sở dữ liệu
 
 php artisan migrate
@@ -68,6 +69,7 @@ php artisan migrate
 php artisan serve
 
 6. Chạy lệnh seeder để tạo tài khoản cho khách và admin
+   
 đầu tiên chạy lệnh:
 php artisan db:seed --class=CustomerSeeder
 
@@ -82,7 +84,9 @@ sau khi chạy lệnh trên xong thì đã tạo được một tài khoản adm
 email: admin@example.com
 pass: 123456
 
-7. Để chuyển hướng đến trang đăng nhập admin bạn phải thêm đường dẫn /admin lên url với url hiện tại đang ở trang chủ.
+7. Để chuyển hướng đến trang đăng nhập admin:
+
+bạn phải thêm đường dẫn /admin lên url với url hiện tại đang ở trang chủ.
 
 
 Liên Hệ với tôi nếu có bất kỳ câu hỏi hoặc vấn đề nào, vui lòng liên hệ qua email: [hoanganhh080703@gmail.com].
