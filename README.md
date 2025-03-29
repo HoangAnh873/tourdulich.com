@@ -1,66 +1,79 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Dự Án Quản Lý Tour Du Lịch
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Giới Thiệu
 
-## About Laravel
+Dự án này là một hệ thống quản lý tour du lịch, giúp quản trị viên dễ dàng quản lý các tour du lịch, khách hàng có thể tìm kiếm và đặt tour trực tuyến. Hệ thống hỗ trợ đầy đủ các chức năng quản lý, duyệt tour, thông báo qua email, và thanh toán trực tuyến.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Công Nghệ Sử Dụng
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Backend: Laravel (PHP)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Frontend: Blade Template, HTML, CSS, JavaScript
 
-## Learning Laravel
+Cơ sở dữ liệu: MySQL
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Gửi email: Laravel Mail
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Thanh toán: tài khoản ngân hàng.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Chức Năng Chính
 
-## Laravel Sponsors
+1. Quản Trị Viên (Admin)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Quản lý danh sách tour du lịch: Thêm, sửa, xóa tour.
 
-### Premium Partners
+Quản lý danh mục địa điểm du lịch.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Duyệt các tour mới do đối tác tạo.
 
-## Contributing
+Gửi thông báo duyệt thành công qua email cho khách hàng.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Quản lý đơn đặt tour và thanh toán.
 
-## Code of Conduct
+2. Khách Hàng
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Tìm kiếm tour theo địa điểm.
 
-## Security Vulnerabilities
+Đặt tour trực tuyến.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Thanh toán qua tài khoản ngân hàng.
 
-## License
+Nhận email xác nhận đơn hàng.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Theo dõi lịch trình tour đã đặt.
+
+Cài Đặt & Chạy Dự Án
+
+1. Clone repository
+
+ git clone <repo_url>
+ cd tourdulich.com
+
+2. Cài đặt dependencies
+
+composer install
+npm install
+
+3. Cấu hình môi trường
+
+Copy file .env.example thành .env
+
+Chỉnh sửa thông tin kết nối database trong .env
+
+4. Tạo cơ sở dữ liệu & seed dữ liệu mẫu
+
+php artisan migrate --seed
+
+5. Chạy server
+
+php artisan serve
+
+6. Chạy frontend (nếu có dùng Vue/React)
+
+npm run dev
+
+Liên Hệ
+
+Nếu có bất kỳ câu hỏi hoặc vấn đề nào, vui lòng liên hệ qua email: [hoanganhh080703@gmail.com].
+
+✨ Cảm ơn bạn đã sử dụng hệ thống! ✨
