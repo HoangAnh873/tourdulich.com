@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-<<<<<<< HEAD
-        Schema::rename('order', 'orders');
-=======
-            if (Schema::hasTable('order') && !Schema::hasTable('orders')) {
-                Schema::rename('order', 'orders');
-            }
->>>>>>> bb67a26 (Cập nhật lại migration)
+        if (Schema::hasTable('order') && !Schema::hasTable('orders')) {
+            Schema::rename('order', 'orders');
+        }
     }
 
     /**
@@ -25,12 +21,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-<<<<<<< HEAD
-        Schema::rename('order', 'orders');
-=======
-            if (Schema::hasTable('order') && !Schema::hasTable('orders')) {
-                Schema::rename('order', 'orders');
-            }
->>>>>>> bb67a26 (Cập nhật lại migration)
+        if (Schema::hasTable('order') && !Schema::hasTable('orders')) {
+            Schema::rename('order', 'orders');
+        }
+
     }
 };
+
