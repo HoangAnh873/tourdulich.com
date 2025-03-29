@@ -11,9 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
+<<<<<<< HEAD
         Schema::table('bills', function (Blueprint $table) {
             $table->tinyInteger('publish')->default(0);
         });
+=======
+        if (!Schema::hasColumn('bills', 'publish')) {
+            Schema::table('bills', function (Blueprint $table) {
+                $table->tinyInteger('publish')->default(0)->notNull();
+            });
+        }
+>>>>>>> bb67a26 (Cập nhật lại migration)
     }
 
     /**
@@ -21,8 +29,16 @@ return new class extends Migration
      */
     public function down(): void
     {
+<<<<<<< HEAD
         Schema::table('bills', function (Blueprint $table) {
             $table->dropColumn('publish');
         });
+=======
+        if (Schema::hasColumn('bills', 'publish')) {
+            Schema::table('bills', function (Blueprint $table) {
+                $table->dropColumn('publish');
+            });
+        }
+>>>>>>> bb67a26 (Cập nhật lại migration)
     }
 };
