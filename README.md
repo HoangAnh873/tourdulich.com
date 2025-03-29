@@ -58,7 +58,7 @@ composer install
 Copy file .env.example thành .env
 
 Chỉnh sửa thông tin kết nối database trong .env
-
+tạo APP_KEY bằng lệnh: php artisan key:generate  
 4. Tạo cơ sở dữ liệu & seed dữ liệu mẫu
 
 php artisan migrate --seed
