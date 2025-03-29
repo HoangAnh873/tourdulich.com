@@ -129,13 +129,6 @@ Route::group(['prefix' => 'bill'], function(){
     ('bill.index')->middleware('admin');
 });
 
-
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> bb67a26 (Cập nhật lại migration)
 /* LANGUAGE */
 Route::group(['prefix' => 'language'], function(){
     Route::get('index', [LanguageController::class, 'index'])->name
