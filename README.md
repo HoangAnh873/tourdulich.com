@@ -52,10 +52,6 @@ Cài Đặt & Chạy Dự Án
 2. Cài đặt dependencies
 
 composer install
-<<<<<<< HEAD
-=======
-npm install
->>>>>>> bb67a26 (Cập nhật lại migration)
 
 3. Cấu hình môi trường
 
