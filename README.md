@@ -67,8 +67,24 @@ php artisan migrate
 
 php artisan serve
 
-Liên Hệ
+6. Chạy lệnh seeder để tạo tài khoản cho khách và admin
+đầu tiên chạy lệnh:
+php artisan db:seed --class=CustomerSeeder
 
-Nếu có bất kỳ câu hỏi hoặc vấn đề nào, vui lòng liên hệ qua email: [hoanganhh080703@gmail.com].
+sau khi chạy lệnh trên xong thì đã tạo được một tài khoản khách hàng
+email: customer@example.com
+pass: 123456
+
+tiếp theo chạy lệnh: 
+php artisan db:seed --class=UserSeeder
+
+sau khi chạy lệnh trên xong thì đã tạo được một tài khoản admin
+email: admin@example.com
+pass: 123456
+
+7. Để chuyển hướng đến trang đăng nhập admin bạn phải thêm đường dẫn /admin lên url với url hiện tại đang ở trang chủ.
+
+
+Liên Hệ với tôi nếu có bất kỳ câu hỏi hoặc vấn đề nào, vui lòng liên hệ qua email: [hoanganhh080703@gmail.com].
 
 ✨ Cảm ơn bạn đã sử dụng hệ thống! ✨
