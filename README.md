@@ -52,7 +52,6 @@ Cài Đặt & Chạy Dự Án
 2. Cài đặt dependencies
 
 composer install
-npm install
 
 3. Cấu hình môi trường
 
