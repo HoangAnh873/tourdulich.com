@@ -84,6 +84,18 @@ php artisan db:seed --class=UserSeeder
 
 ---
 
+## 📂 8. Nhập Dữ Liệu Tỉnh/Huyện/Xã
+📢 Lưu ý: Để sử dụng đầy đủ chức năng trong trang quản trị, bạn cần nhập dữ liệu tỉnh/huyện/xã vào cơ sở dữ liệu.
+
+🔽 Bước 1: Tải File SQL
+👉 Tải xuống 2 file sau từ Google Drive: 
+https://drive.google.com/drive/u/0/folders/1OfjtKd1p9Q0ZTjPQpWDQE7FI6xsXSJ2a
+
+🔽 Bước 2: Đăng nhập vào phpMyAdmin và import vào cơ sở dữ liệu
+import CreateTables_vn_units.sql trước và sau đó là import tiếp ImportData_vn_units.sql.
+
+---
+
 ## 📧 Liên Hệ  
 📩 Nếu có bất kỳ câu hỏi hoặc cần hỗ trợ, vui lòng liên hệ qua email: **[hoanganhh080703@gmail.com]**  
 
